@@ -23,3 +23,5 @@ __pycache__/
 # The vault starts empty (only .gitkeep) and is filled during the workshop
 vault/*
 !vault/.gitkeep
+
+AGENTS.sandbox.md
