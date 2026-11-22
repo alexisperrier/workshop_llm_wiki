@@ -20,9 +20,10 @@ At each step you make a decision and you check the result. The agent does the ty
 | `README.md` | this guide |
 | `debate.json` | the debate: every speech, with its speaker, in the original language |
 | `to_markdown.py` | a script (a small program) that turns `debate.json` into notes |
+| `to_markdown_prompt.txt` | the prompt that produced `to_markdown.py` |
 | `AGENTS.md` | the rules for the agent; you complete it in step 3 |
 | `fallacy_detection_codebook.md` | the definitions of the fallacies, for step 8 |
-| `vault/` | your wiki, empty for now. In Obsidian a folder of notes is called a *vault* |
+| `vault/` | your wiki, empty at the start. `to_markdown.py` fills it in step 2, then the agent enriches it step by step. In Obsidian a folder of notes is called a *vault* |
 
 ## Background
 
@@ -105,12 +106,14 @@ language: "de"
 2. **Install OpenCode.** Download the desktop app from <https://opencode.ai/download> and install it.
 3. **Connect the model.** Follow your teacher's instructions to connect OpenCode to the model you'll use (in OpenCode, the `/connect` command). Or choose on of the free models that are made available in Opencode.
 4. **Open the folder in OpenCode.** Open the unzipped folder as a project. OpenCode now reads `AGENTS.md` by itself.
-5. **Install Obsidian.** Download it from <https://obsidian.md/download> and install it. You'll open the vault in step 2.
+5. **Install Obsidian and open the vault.** Download Obsidian from <https://obsidian.md/download> and install it. Choose *Open folder as vault* and select the `vault` folder inside this project. It's empty for now: the notes appear in step 2.
 6. **Check Python.** The script needs Python 3, which is already installed on most computers. In OpenCode, type:
 
    > Check that python3 is installed on this computer, and tell me its version.
 
    If it isn't installed, ask OpenCode how to install it.
+
+Note : installing python may take some time or face hurdles. If after a few minutes this is becoming a problem, just unzip the solution output file : vault_solution.zip . 
 
 ### Working with OpenCode
 
@@ -121,115 +124,29 @@ language: "de"
 
   Use Plan when you only want to look or ask (steps 1 and 7).
 * A *session* is one conversation. A new session starts with no memory of the previous one, but `AGENTS.md` is always loaded.
-* Read what the agent says it did. If something looks wrong, say so: "You created two notes for Frontex. Merge them."
+* Read what the agent says it did. If something looks wrong, say so: "You created two notes. Merge them."
 
 ## Step 1. Explore the data
 
-1. **Read how the dataset was made.** Open [`docs/specs.md`](https://github.com/SkatAI/eu-parliament-verbatim/blob/main/docs/specs.md): this one-page description was enough for an AI agent to write the program that collected the data.
-2. **Ask the agent to explain the data.** In OpenCode, with the **Plan** agent, type:
+1. **Ask the agent to explain the data.** In OpenCode, with the **Plan** agent, type:
 
    > Explain the structure of debate.json in simple terms: what are its main parts, and what does one intervention contain? Show me the intervention with order 210 as an example.
 
-3. **Compare with the official transcript.** Open the source page of the debate (link in the table above) and find the speech of Jeroen Lenaers. It should match intervention 210.
+2. **Compare with the official transcript.** Open the source page of the debate (link in the table above) and find the speech of Jeroen Lenaers. It should match intervention 210.
 4. **Find the three levels** in what the agent showed you: sitting, debate, intervention. Which fields give the speaker's name, group, party and country? Which field gives the original language?
 
 ## Step 2. Turn the data into notes
 
-`to_markdown.py` turns `debate.json` into notes. It was written by an AI agent from the prompt below. Read the prompt: it shows how precise you need to be to get what you want.
+`to_markdown.py` turns `debate.json` into markdown notes. It was written by an AI agent from the prompt below. Read the prompt: it shows how precise you need to be to get what you want.
 
 <details>
 <summary><b>The prompt that produced <code>to_markdown.py</code></b></summary>
-
-```text
-Write a Python script, to_markdown.py, that converts debate.json into markdown notes for an
-Obsidian vault in vault/.
-
-CONTEXT
-debate.json holds one European Parliament plenary debate:
-- "sitting": date and URL of the sitting;
-- "debate": id, title, URL, stats, and "interventions", the list of interventions in the order
-  of the verbatim report (field "order").
-Each intervention has its text in the original language ("text", "paragraphs"), its type
-("activity_type", "statement_type") and its speaker ("speaker": full name, nationality,
-political group, national party, taken from the MEP database).
-
-CONSTRAINTS
-- Python standard library only, Python 3.8 or later, one file. Run with: python3 to_markdown.py
-- No LLM and no network: everything comes from debate.json.
-- Links are Obsidian wikilinks: [[file name]] or [[file name|text shown]].
-- Metadata goes in a YAML frontmatter. Write each value as JSON (quoted strings, lists in
-  brackets), so that quotes and colons in names are safe.
-- File names must work on macOS and Windows and in links: replace \ / : * ? " < > | # ^ [ ]
-  with "-", and remove a trailing dot or space.
-
-KIND OF EACH INTERVENTION
-- written: activity_type is PLENARY_DEBATE_WRITTEN_STATEMENT
-- procedural: any other activity_type except PLENARY_DEBATE_SPEECH (no note; listed in the
-  debate note)
-- question / answer: statement_type is question / answer (blue cards)
-- chair: the name in the transcript is the chair's title ("Presidente", "Le Président",
-  "President"... in the EU languages)
-- speech: everything else
-
-NOTES TO WRITE, ONE FOLDER EACH
-1. speeches/: one note per intervention, except procedural ones.
-   - File name: "<order> <speaker full name>", followed by " (<kind>)" unless the kind is
-     speech. Examples: "210 Jeroen Lenaers", "227 Diego Solier (question)".
-   - Frontmatter: type (intervention), kind, speech_id, order, debate_id, date, start_time and
-     end_time (HH:MM:SS), speaker, speaker_label, group, party, country, on_behalf_of_group,
-     language, words.
-   - Body, in this order:
-     - "Speaker: [[...]] · Group: [[...]] · Party: [[...]] · Country: [[...]]", with only the
-       parts that exist. For a speaker with no group, add "Role: <role in the transcript>".
-     - "Debate: [[<debate note>]]"
-     - for a blue-card question: "Blue-card question on: [[<note of the last speech before
-       it>]]"
-     - for an answer: "Replies to: [[<note of the last question before it>]]"
-     - for a written statement: a line saying it was not spoken in the chamber
-     - a title, the speaker label as a quote, then "## Text" with the paragraphs.
-2. debates/: one note. File name = the debate title without " (debate)".
-   - Frontmatter: type, debate_id, date, title, url, sitting_url, interventions, words,
-     aliases (the full title).
-   - Body: a link to the source page, then "## Interventions": every intervention in order,
-     "- <order>. [[note]] (<group or role>, <kind>)", procedural lines in italics.
-   - Then "## Chair": who chairs at the start, and each "PRÉSIDENCE: ..." change, linked to
-     the person.
-3. people/: one note per speaker.
-   - File name = speaker.full_name, in Latin script, or the transcript name when it's missing.
-   - Frontmatter: type (person), person_id, first_name, last_name, gender, mep, group, party,
-     country, roles (e.g. "chair of the sitting", "Member of the Commission"), aliases (the
-     transcript names that differ from the full name, e.g. Greek or Cyrillic spellings; never
-     the chair's title).
-   - Body: links to the group, party and country; the number of interventions of each kind.
-4. groups/: one note per political group.
-   - File name = the EP label ("PPE", "S&D", "Verts-ALE").
-   - Frontmatter: type (group), group_id, label, name, aliases (the label and the name when
-     they differ from the file name).
-5. parties/: one note per national party.
-   - File name = "<label> (<ISO alpha-3 code of the speaker's country>)": the same label in
-     two countries is two parties ("PS (FRA)", "PS (PRT)").
-   - No note for labels that mean "no party": Independent, Independiente, Ind., Sans parti.
-   - Body: links to the country and to the groups of its speakers.
-6. countries/: one note per nationality of the speakers.
-   - File name = the English short name ("Spain"), with the ISO code as alias.
-Also create the empty folders entities/, topics/ and fallacies/.
-
-SAFETY AND OPTIONS
-- If notes already exist in these six folders, stop with a message. Rebuild them only with
-  --overwrite (the enriched notes would be lost).
-- --snapshot copies vault/ to vault_v0/ at the end.
-- Print the number of notes written in each folder.
-
-CHECKS
-- Every [[link]] points to a note that exists: no unresolved links.
-- Every frontmatter is valid YAML.
-```
-
+is available in the file `to_markdown_prompt.txt`
 </details>
 
 1. **Run the script.** In OpenCode, with the **Build** agent, type:
 
-   > Run `python3 to_markdown.py --snapshot` and tell me how many notes were written in each folder.
+   > Run `python3 to_markdown.py` and tell me how many notes were written in each folder.
 
    You should get:
 
@@ -242,7 +159,7 @@ CHECKS
    | `parties/` | 46 |
    | `countries/` | 17 |
 
-2. **Open the vault in Obsidian.** Choose *Open folder as vault* and select the `vault` folder inside this project.
+2. **Look at the vault in Obsidian.** The notes appear in the vault you opened during setup. If you haven't opened it yet, choose *Open folder as vault* and select the `vault` folder inside this project. Open the graph view (Cmd+G on Mac, Ctrl+G on Windows) and take a screenshot: you will compare it with the enriched graph in step 6.
 3. **Check the notes:**
    * Open 3 speech notes and compare them with the source page.
    * Open the note `Konstantinos Arvanitis`: what is in its `aliases`, and why?
@@ -252,7 +169,7 @@ CHECKS
    * the written statements get notes, even though they were not spoken;
    * the chair's short interventions get notes too.
 
-   Would you make the same choices? If not, ask OpenCode to change the script, then run it again with `--overwrite --snapshot`.
+   Would you make the same choices? If not, ask OpenCode to change the script, then run it again with `--overwrite`.
 
 ## Step 3. Write the rules: AGENTS.md
 
@@ -329,7 +246,7 @@ This is the main design work. `AGENTS.md` already contains the parts that don't 
    | blue | `#0072B2` | vermilion | `#D55E00` |
    | purple | `#CC79A7` | | |
 
-3. **See what the LLM added.** Open `vault_v0` as a second vault (*Open another vault*) and compare its graph with your enriched vault.
+3. **See what the LLM added.** Compare the graph with your screenshot from step 2.
 4. **Open the local graph of a topic.** Open the topic note, click the *⋯* menu, then *Open local graph*, with depth 2. Which groups and MEPs connect to it?
 5. **Answer one question from the graph, then check it in the notes.** For example:
    * Which entities are mentioned by one group only?
@@ -357,11 +274,11 @@ This is the main design work. `AGENTS.md` already contains the parts that don't 
 
 ## Step 8. Look for fallacies
 
-`codebook.md` defines 6 fallacies: ad hominem, straw man, false dilemma, slippery slope, false cause, hasty generalisation. It also defines a control code for strong claims made without support, which is not a fallacy.
+`fallacy_detection_codebook.md` defines 6 fallacies: ad hominem, straw man, false dilemma, slippery slope, false cause, hasty generalisation. It also defines a control code for strong claims made without support, which is not a fallacy.
 
 1. **Prepare the speeches without their authors.** Knowing the speaker or the group can bias the labels. In the workshop project (Build agent), type:
 
-   > Create a folder named ceuta_blind next to this project folder (in its parent folder, not inside it). For each note in vault/speeches/, write a file <speech_id>.txt that contains only the text of the speech: no name, no group, no party, no country. Then copy codebook.md into ceuta_blind as AGENTS.md.
+   > Create a folder named ceuta_blind next to this project folder (in its parent folder, not inside it). For each note in vault/speeches/, write a file <speech_id>.txt that contains only the text of the speech: no name, no group, no party, no country. Then copy fallacy_detection_codebook.md into ceuta_blind as AGENTS.md.
 
    The folder must be outside the project. Otherwise OpenCode would also load the project's `AGENTS.md`, which knows the speakers.
 
@@ -377,7 +294,7 @@ This is the main design work. `AGENTS.md` already contains the parts that don't 
 
 4. **Bring the labels into the wiki.** Back in the workshop project, type:
 
-   > Read ../ceuta_blind/results.yaml. Find each speech in vault/speeches/ by its speech_id and add a "## Fallacies" section with the labels. Create one note per code in vault/fallacies/, with its definition from codebook.md, and link the labels to it.
+   > Read ../ceuta_blind/results.yaml. Find each speech in vault/speeches/ by its speech_id and add a "## Fallacies" section with the labels. Create one note per code in vault/fallacies/, with its definition from fallacy_detection_codebook.md, and link the labels to it.
 
 5. **Look at the result in the graph:** fallacy notes, speeches, groups.
 
@@ -385,6 +302,6 @@ Be careful with what you conclude. With 3 to 12 speeches per group, no compariso
 
 ## What you hand in
 
-* Your vault: `vault_v0/` and the enriched `vault/`.
+* Your enriched vault (`vault/`) and your screenshot of the graph from step 2.
 * `AGENTS.v1.md` and your final `AGENTS.md`, with what you changed between them and why.
 * The step-4 checks, your 5 chatbot questions with their scores, and the fallacy comparison table.

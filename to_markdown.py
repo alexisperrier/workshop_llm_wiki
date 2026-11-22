@@ -2,10 +2,11 @@
 """Convert debate.json into the notes of the Obsidian vault (step 2).
 
 Usage:
-    python3 to_markdown.py               # creates vault/ and writes the notes
+    python3 to_markdown.py               # writes the notes into vault/
     python3 to_markdown.py --overwrite   # rebuild: replaces the notes this script owns
 
-The vault is built in steps: this script creates vault/ and the six folders below (step 2).
+vault/ exists from the start, empty, so that it can be opened in Obsidian before step 2.
+The vault is built in steps: this script adds the six folders below (step 2).
 The agent adds entities/, topics/ and index.md (step 4), then fallacies/ (step 8).
 
 Notes written (all from the structured data, no LLM):

@@ -9,7 +9,7 @@ Follow these rules exactly. When a case is not covered, stop and ask the user. D
 | Path | Role | You may |
 |---|---|---|
 | `debate.json` | the source: one debate, extracted from the dataset | read only |
-| `codebook.md` | fallacy codebook, used in step 8 only | read only |
+| `fallacy_detection_codebook.md` | fallacy codebook, used in step 8 only | read only |
 | `to_markdown.py` | the converter that wrote the step-2 notes | run only when asked |
 | `vault/` | the wiki | read and write |
 

@@ -1,0 +1,84 @@
+Write a Python script, to_markdown.py, that converts debate.json into markdown notes for an
+Obsidian vault in vault/. The folder vault/ already exists: it is empty, or holds only
+.gitkeep and the .obsidian/ settings folder that Obsidian creates. Leave both untouched, and
+create vault/ only if it is missing.
+
+CONTEXT
+debate.json holds one European Parliament plenary debate:
+- "sitting": date and URL of the sitting;
+- "debate": id, title, URL, stats, and "interventions", the list of interventions in the order
+  of the verbatim report (field "order").
+Each intervention has its text in the original language ("text", "paragraphs"), its type
+("activity_type", "statement_type") and its speaker ("speaker": full name, nationality,
+political group, national party, taken from the MEP database).
+
+CONSTRAINTS
+- Python standard library only, Python 3.8 or later, one file. Run with: python3 to_markdown.py
+- No LLM and no network: everything comes from debate.json.
+- Links are Obsidian wikilinks: [[file name]] or [[file name|text shown]].
+- Metadata goes in a YAML frontmatter. Write each value as JSON (quoted strings, lists in
+  brackets), so that quotes and colons in names are safe.
+- File names must work on macOS and Windows and in links: replace \ / : * ? " < > | # ^ [ ]
+  with "-", and remove a trailing dot or space.
+
+KIND OF EACH INTERVENTION
+- written: activity_type is PLENARY_DEBATE_WRITTEN_STATEMENT
+- procedural: any other activity_type except PLENARY_DEBATE_SPEECH (no note; listed in the
+  debate note)
+- question / answer: statement_type is question / answer (blue cards)
+- chair: the name in the transcript is the chair's title ("Presidente", "Le Président",
+  "President"... in the EU languages)
+- speech: everything else
+
+NOTES TO WRITE, ONE FOLDER EACH
+1. speeches/: one note per intervention, except procedural ones.
+   - File name: "<order> <speaker full name>", followed by " (<kind>)" unless the kind is
+     speech. Examples: "210 Jeroen Lenaers", "227 Diego Solier (question)".
+   - Frontmatter: type (intervention), kind, speech_id, order, debate_id, date, start_time and
+     end_time (HH:MM:SS), speaker, speaker_label, group, party, country, on_behalf_of_group,
+     language, words.
+   - Body, in this order:
+     - "Speaker: [[...]] · Group: [[...]] · Party: [[...]] · Country: [[...]]", with only the
+       parts that exist. For a speaker with no group, add "Role: <role in the transcript>".
+     - "Debate: [[<debate note>]]"
+     - for a blue-card question: "Blue-card question on: [[<note of the last speech before
+       it>]]"
+     - for an answer: "Replies to: [[<note of the last question before it>]]"
+     - for a written statement: a line saying it was not spoken in the chamber
+     - a title, the speaker label as a quote, then "## Text" with the paragraphs.
+2. debates/: one note. File name = the debate title without " (debate)".
+   - Frontmatter: type, debate_id, date, title, url, sitting_url, interventions, words,
+     aliases (the full title).
+   - Body: a link to the source page, then "## Interventions": every intervention in order,
+     "- <order>. [[note]] (<group or role>, <kind>)", procedural lines in italics.
+   - Then "## Chair": who chairs at the start, and each "PRÉSIDENCE: ..." change, linked to
+     the person.
+3. people/: one note per speaker.
+   - File name = speaker.full_name, in Latin script, or the transcript name when it's missing.
+   - Frontmatter: type (person), person_id, first_name, last_name, gender, mep, group, party,
+     country, roles (e.g. "chair of the sitting", "Member of the Commission"), aliases (the
+     transcript names that differ from the full name, e.g. Greek or Cyrillic spellings; never
+     the chair's title).
+   - Body: links to the group, party and country; the number of interventions of each kind.
+4. groups/: one note per political group.
+   - File name = the EP label ("PPE", "S&D", "Verts-ALE").
+   - Frontmatter: type (group), group_id, label, name, aliases (the label and the name when
+     they differ from the file name).
+5. parties/: one note per national party.
+   - File name = "<label> (<ISO alpha-3 code of the speaker's country>)": the same label in
+     two countries is two parties ("PS (FRA)", "PS (PRT)").
+   - No note for labels that mean "no party": Independent, Independiente, Ind., Sans parti.
+   - Body: links to the country and to the groups of its speakers.
+6. countries/: one note per nationality of the speakers.
+   - File name = the English short name ("Spain"), with the ISO code as alias.
+Create only these six folders, inside vault/: the agent adds entities/, topics/ and fallacies/
+in later steps.
+
+SAFETY AND OPTIONS
+- If notes already exist in these six folders, stop with a message. Rebuild them only with
+  --overwrite (the enriched notes would be lost).
+- Print the number of notes written in each folder.
+
+CHECKS
+- Every [[link]] points to a note that exists: no unresolved links.
+- Every frontmatter is valid YAML.

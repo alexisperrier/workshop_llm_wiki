@@ -20,5 +20,6 @@ __pycache__/
 .idea/
 *.swp
 
-# The vault is built during the workshop, starting from debate.json
-vault/
+# The vault starts empty (only .gitkeep) and is filled during the workshop
+vault/*
+!vault/.gitkeep
