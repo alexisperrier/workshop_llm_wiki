@@ -1,10 +1,13 @@
-# AGENTS.md: LLM wiki of the Ceuta debate
+# AGENTS.md: LLM wiki of European Parliament debates
 
 <!--This file tells the agent how to build and maintain the wiki. Some parts are already written. Fill in the parts marked **TODO** in step 3, then revise them after the checks of step 4. Keep your first version as `AGENTS.v1.md` before you revise it.
 
 Write the rules as instructions to the agent: short, exact, with examples. The agent follows what is written, not what you meant.-->
 
-You maintain an Obsidian wiki (`vault/`) built from one European Parliament plenary debate (`debate.json`): *The recent hybrid attacks and instrumentalisation of migrants in Ceuta and the need for a coordinated response to protect the EU's external borders*, 15 September 2026.
+You maintain an Obsidian wiki (`vault/`) built from European Parliament plenary debates on migration, one source file per debate:
+
+* `debate_ceuta.json`: *The recent hybrid attacks and instrumentalisation of migrants in Ceuta and the need for a coordinated response to protect the EU's external borders*, 15 September 2026, added first;
+* `debate_return_regulation.json`: *Common system for the return of third-country nationals staying illegally in the Union (Return Regulation)*, 16 June 2026, added in step 9.
 
 When a case is not covered by these rules, stop and ask the user. Don't invent a convention.
 
@@ -12,7 +15,7 @@ When a case is not covered by these rules, stop and ask the user. Don't invent a
 
 | Path | Role | You may |
 |---|---|---|
-| `debate.json` | the source: one debate, extracted from the dataset | read only |
+| `debate_*.json` | the sources: one debate per file, extracted from the dataset | read only |
 | `fallacy_detection_codebook.md` | fallacy codebook, used in step 8 only | read only |
 | `to_markdown.py` | the converter that wrote the step-2 notes | run only when asked |
 | `vault/` | the wiki | read and write |
@@ -24,7 +27,7 @@ Vault folders: `speeches/`, `debates/`, `people/`, `groups/`, `parties/`, `count
 ## 2. What you must not change
 
 * The text of a speech, in the original language.
-* Anything in `debate.json`.
+* Anything in the `debate_*.json` files.
 * Don't write backlinks. Obsidian computes them.
 
 > **TODO**: what else must the agent never change or create? Think of the step-2 fields and links, and of the group and party notes. Can the agent deduce a speaker's group from the text?
@@ -52,7 +55,7 @@ Never write a link to a name that is not a file name in the vault: an unresolved
 > **TODO**: write the rule for each of these, with an example from the debate.
 >
 > * **People:** which name is the file name, and which names go in `aliases`? What about people written in Greek or Cyrillic? What about people mentioned in a speech but not in the data?
-> * **The chair:** who is "Madam President" or "Mr President"? The chair changes during the debate. Look for `PRÉSIDENCE` in `debate.json`.
+> * **The chair:** who is "Madam President" or "Mr President"? The chair changes during the Ceuta debate: look at the `## Chair` section of each debate note. The rule must also work for the second debate.
 > * **National parties:** `PS` is three different parties in this debate. How do you name them? What about `Independiente` or `Sans parti`?
 > * **Countries:** which language for the file name? Which aliases?
 > * **Other entities:** e.g. Frontex, the Pact on Migration and Asylum, Ceuta. Which name, which aliases?
@@ -87,7 +90,7 @@ The agent reads the original text of each speech, in any language.
 >
 > * Which fields does the agent add to the frontmatter (as plain values, for filtering in Obsidian)?
 > * Which sections does it append after the text, and in which order? Give the template.
-> * Write the question of the debate that the speaker's position answers, and the allowed values (supports / opposes / mixed / not stated).
+> * Write, for each debate, the question that the speaker's position answers, and the allowed values (supports / opposes / mixed / not stated).
 > * The dataset has no English translation. How should the agent quote the original text and mark its own translations?
 > * What is different for blue-card questions and answers, for the chair's interventions, and for the written statements?
 
@@ -110,3 +113,12 @@ The agent reads the original text of each speech, in any language.
 ## 10. Query mode (step 7)
 
 > **TODO**: how does the agent answer a question about the debate? Where does it start, what may it use, how does it cite, and what does it say when the answer is not in the vault? May it modify files?
+
+## 11. Adding a debate (step 9)
+
+> **TODO**: what does the agent do when a new debate is added to the vault?
+>
+> * Which rules must you update first (the debate's question, the topics, the chair)?
+> * Which notes does it enrich, and in which order?
+> * Which pages that already exist must it update (people, entities, topics, groups, `index.md`)?
+> * What does it check at the end?

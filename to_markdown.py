@@ -1,9 +1,18 @@
 #!/usr/bin/env python3
-"""Convert debate.json into the notes of the Obsidian vault (step 2).
+"""Convert one debate file into notes of the Obsidian vault.
 
 Usage:
-    python3 to_markdown.py               # writes the notes into vault/
-    python3 to_markdown.py --overwrite   # rebuild: replaces the notes this script owns
+    python3 to_markdown.py debate_ceuta.json                # step 2: the first debate
+    python3 to_markdown.py debate_return_regulation.json    # step 9: add a second debate
+    python3 to_markdown.py debate_ceuta.json --overwrite    # rebuild that debate's notes
+
+Each run adds one debate to the vault:
+    - it writes the debate's speech notes and its debate note;
+    - it writes a note for each speaker, group, party and country that is not in the vault yet,
+      and keeps the notes that already exist (they may have been enriched by the agent);
+    - it lists what to check in the existing notes: new spellings of a name, a group that changed.
+It stops if the debate is already in the vault. --overwrite rebuilds only that debate's speech
+notes and debate note (their enrichment is lost); it never replaces the other notes.
 
 vault/ exists from the start, empty, so that it can be opened in Obsidian before step 2.
 The vault is built in steps: this script adds the six folders below (step 2).
@@ -22,7 +31,8 @@ Naming rules (same as AGENTS.md):
     groups      EP label, "/" replaced by "-"                      e.g. PPE, Verts-ALE
     parties     "<label> (<ISO alpha-3 country code>)", "/" -> "-"  e.g. PS (FRA), TB-LNNK (LVA)
     countries   English short name, ISO code as alias               e.g. Spain (ESP)
-    speeches    "<order> <speaker>" plus the kind when not a speech e.g. 227 Diego Solier (question)
+    speeches    "<date> <order> <speaker>", plus the kind when not a speech
+                e.g. 2026-09-15 227 Diego Solier (question)
 
 Standard library only. Python 3.8 or later.
 """
@@ -126,12 +136,34 @@ def write(path, text, written):
     written[path.parent.name] += 1
 
 
+def write_if_new(path, text, written, kept):
+    """Shared notes (people, groups, parties, countries): never replace an existing note."""
+    if path.exists():
+        kept[path.parent.name] += 1
+        return False
+    write(path, text, written)
+    return True
+
+
+def frontmatter_value(path, key):
+    """Read one field from a note's frontmatter, if it is written as JSON on one line."""
+    for line in path.read_text(encoding="utf-8").splitlines()[1:]:
+        if line.strip() == "---":
+            break
+        if line.startswith(key + ":"):
+            try:
+                return json.loads(line[len(key) + 1:].strip())
+            except ValueError:
+                return None
+    return None
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--source", default="debate.json", help="debate file (default: debate.json)")
+    parser.add_argument("source", help="debate file, e.g. debate_ceuta.json")
     parser.add_argument("--vault", default="vault", help="vault folder (default: vault)")
     parser.add_argument("--overwrite", action="store_true",
-                        help="replace existing notes in the folders this script writes (loses any enrichment)")
+                        help="rebuild this debate's speech notes and debate note (loses their enrichment)")
     args = parser.parse_args()
 
     source = Path(args.source)
@@ -141,18 +173,33 @@ def main():
     sitting = data["sitting"]
     interventions = sorted(debate["interventions"], key=lambda iv: iv["order"])
 
-    existing = [p for folder in CONVERTER_FOLDERS for p in (vault / folder).glob("*.md")]
+    debate_note = safe_name(debate["title"].replace(" (debate)", ""))
+    date = sitting["date"]
+
+    # File name of each intervention note. The date keeps names unique across debates.
+    note_of = {}
+    for iv in interventions:
+        kind = kind_of(iv)
+        if kind == "procedural":
+            continue
+        suffix = "" if kind == "speech" else f" ({kind})"
+        note_of[iv["order"]] = safe_name(f"{date} {iv['order']} {person_name(iv)}{suffix}")
+
+    # Stop if this debate is already in the vault, unless --overwrite.
+    own_notes = [vault / "speeches" / f"{n}.md" for n in note_of.values()] + [vault / "debates" / f"{debate_note}.md"]
+    existing = [p for p in own_notes if p.exists()]
     if existing and not args.overwrite:
-        sys.exit(f"{len(existing)} notes already exist in {vault}/. "
-                 "Run with --overwrite to rebuild them (this replaces any enrichment in those notes).")
+        sys.exit(f"This debate is already in the vault ({len(existing)} of its notes exist). "
+                 "Run with --overwrite to rebuild its speech notes and debate note "
+                 "(their enrichment would be lost).")
     for folder in CONVERTER_FOLDERS:
         (vault / folder).mkdir(parents=True, exist_ok=True)
-    if args.overwrite:
-        for p in existing:
-            p.unlink()
+    for p in existing:
+        p.unlink()
 
-    debate_note = safe_name(debate["title"].replace(" (debate)", ""))
     written = defaultdict(int)
+    kept = defaultdict(int)
+    to_check = []
 
     # Collect people, groups, parties and countries from the speakers.
     people = {}
@@ -188,15 +235,6 @@ def main():
             entry = parties.setdefault(pfile, {"party": party, "country": country, "groups": set()})
             if group:
                 entry["groups"].add(group_file(group))
-
-    # File name of each intervention note.
-    note_of = {}
-    for iv in interventions:
-        kind = kind_of(iv)
-        if kind == "procedural":
-            continue
-        suffix = "" if kind == "speech" else f" ({kind})"
-        note_of[iv["order"]] = safe_name(f"{iv['order']} {person_name(iv)}{suffix}")
 
     # Blue cards: a question is put to the author of the last speech before it; an answer replies to the last question.
     asked_about = {}
@@ -295,9 +333,9 @@ def main():
         if kind != "speech":
             detail = f"{detail}, {kind}" if detail else kind
         lines.append(f"- {iv['order']}. {link(note_of[iv['order']])} ({detail})")
-    if chair_changes:
+    first_chair = next((iv for iv in interventions if kind_of(iv) == "chair"), None)
+    if first_chair or chair_changes:
         lines += ["", "## Chair", ""]
-        first_chair = next((iv for iv in interventions if kind_of(iv) == "chair"), None)
         if first_chair:
             lines.append(f"- From the start: {link(safe_name(person_name(first_chair)))}")
         for iv in chair_changes:
@@ -332,15 +370,23 @@ def main():
             header.append(f"Party: {link(pfile)}")
         if country:
             header.append(f"Country: {link(country_file(country))}")
-        counts = ", ".join(f"{k}: {n}" for k, n in sorted(person["kinds"].items()))
         lines = [frontmatter(fields), ""]
         if header:
             lines += [" · ".join(header), ""]
         lines += [f"# {name}", ""]
         if person["roles"]:
-            lines += [f"Role in this debate: {', '.join(sorted(person['roles']))}.", ""]
-        lines.append(f"Interventions in this debate: {counts}.")
-        write(vault / "people" / f"{name}.md", "\n".join(lines), written)
+            lines += [f"Role: {', '.join(sorted(person['roles']))}.", ""]
+        path = vault / "people" / f"{name}.md"
+        if not write_if_new(path, "\n".join(lines), written, kept):
+            # The person is already in the vault: report what this debate adds.
+            known = set(frontmatter_value(path, "aliases") or [])
+            new_spellings = sorted(person["aliases"] - known)
+            if new_spellings:
+                to_check.append(f"people/{name}: new spelling(s) to add to aliases: {', '.join(new_spellings)}")
+            old_group = frontmatter_value(path, "group")
+            new_group = fields["group"]
+            if old_group and new_group and old_group != new_group:
+                to_check.append(f"people/{name}: group is {new_group} in this debate, {old_group} in the note")
 
     # Group notes.
     for gfile, group in sorted(groups.items()):
@@ -349,7 +395,7 @@ def main():
             "type": "group", "group_id": group["id"], "label": group["label"], "name": group["name"],
             "aliases": sorted(aliases),
         }), "", f"# {gfile}", "", f"{group['name']}: political group of the European Parliament."]
-        write(vault / "groups" / f"{gfile}.md", "\n".join(lines), written)
+        write_if_new(vault / "groups" / f"{gfile}.md", "\n".join(lines), written, kept)
 
     # Party notes.
     for pfile, entry in sorted(parties.items()):
@@ -361,22 +407,27 @@ def main():
             "type": "party", "party_id": party["id"], "label": party["label"], "name": party["name"],
             "country": country_file(country), "aliases": sorted(aliases),
         }), "", " · ".join(header), "", f"# {pfile}", "", f"National party: {party['name']}."]
-        write(vault / "parties" / f"{pfile}.md", "\n".join(lines), written)
+        write_if_new(vault / "parties" / f"{pfile}.md", "\n".join(lines), written, kept)
 
     # Country notes.
     for cfile, country in sorted(countries.items()):
         lines = [frontmatter({"type": "country", "code": country["code"], "aliases": [country["code"]]}),
                  "", f"# {cfile}"]
-        write(vault / "countries" / f"{cfile}.md", "\n".join(lines), written)
+        write_if_new(vault / "countries" / f"{cfile}.md", "\n".join(lines), written, kept)
 
-    print(f"Notes written in {vault}/:")
+    print(f"{debate['title']} ({date})")
+    print(f"Notes in {vault}/:      new   already there (kept)")
     for folder in CONVERTER_FOLDERS:
-        print(f"  {folder + '/':<12} {written[folder]}")
+        print(f"  {folder + '/':<12} {written[folder]:>6}   {kept[folder]:>6}")
     kinds = defaultdict(int)
     for iv in interventions:
         kinds[kind_of(iv)] += 1
     print("Interventions: " + ", ".join(f"{n} {k}" for k, n in sorted(kinds.items())) +
           " (procedural lines appear in the debate note only)")
+    if to_check:
+        print("To check in notes that were already in the vault:")
+        for line in to_check:
+            print("  - " + line)
 
 
 if __name__ == "__main__":

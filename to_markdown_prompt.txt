@@ -1,10 +1,10 @@
-Write a Python script, to_markdown.py, that converts debate.json into markdown notes for an
-Obsidian vault in vault/. The folder vault/ already exists: it is empty, or holds only
+Write a Python script, to_markdown.py, that converts one debate file (e.g. debate_ceuta.json)
+into markdown notes for an Obsidian vault in vault/, and that can add other debates later. The folder vault/ already exists: it is empty, or holds only
 .gitkeep and the .obsidian/ settings folder that Obsidian creates. Leave both untouched, and
 create vault/ only if it is missing.
 
 CONTEXT
-debate.json holds one European Parliament plenary debate:
+Each debate file holds one European Parliament plenary debate:
 - "sitting": date and URL of the sitting;
 - "debate": id, title, URL, stats, and "interventions", the list of interventions in the order
   of the verbatim report (field "order").
@@ -13,8 +13,9 @@ Each intervention has its text in the original language ("text", "paragraphs"), 
 political group, national party, taken from the MEP database).
 
 CONSTRAINTS
-- Python standard library only, Python 3.8 or later, one file. Run with: python3 to_markdown.py
-- No LLM and no network: everything comes from debate.json.
+- Python standard library only, Python 3.8 or later, one file.
+  Run with: python3 to_markdown.py <debate file>
+- No LLM and no network: everything comes from the debate file.
 - Links are Obsidian wikilinks: [[file name]] or [[file name|text shown]].
 - Metadata goes in a YAML frontmatter. Write each value as JSON (quoted strings, lists in
   brackets), so that quotes and colons in names are safe.
@@ -32,8 +33,10 @@ KIND OF EACH INTERVENTION
 
 NOTES TO WRITE, ONE FOLDER EACH
 1. speeches/: one note per intervention, except procedural ones.
-   - File name: "<order> <speaker full name>", followed by " (<kind>)" unless the kind is
-     speech. Examples: "210 Jeroen Lenaers", "227 Diego Solier (question)".
+   - File name: "<date> <order> <speaker full name>", followed by " (<kind>)" unless the kind
+     is speech. The order is unique within a sitting day only, so the date keeps names unique
+     across debates. Examples: "2026-09-15 210 Jeroen Lenaers",
+     "2026-09-15 227 Diego Solier (question)".
    - Frontmatter: type (intervention), kind, speech_id, order, debate_id, date, start_time and
      end_time (HH:MM:SS), speaker, speaker_label, group, party, country, on_behalf_of_group,
      language, words.
@@ -51,7 +54,8 @@ NOTES TO WRITE, ONE FOLDER EACH
      aliases (the full title).
    - Body: a link to the source page, then "## Interventions": every intervention in order,
      "- <order>. [[note]] (<group or role>, <kind>)", procedural lines in italics.
-   - Then "## Chair": who chairs at the start, and each "PRÉSIDENCE: ..." change, linked to
+   - Then "## Chair", whenever the chair speaks or changes: who chairs at the start, and each
+     "PRÉSIDENCE: ..." change, linked to
      the person.
 3. people/: one note per speaker.
    - File name = speaker.full_name, in Latin script, or the transcript name when it's missing.
@@ -59,7 +63,8 @@ NOTES TO WRITE, ONE FOLDER EACH
      country, roles (e.g. "chair of the sitting", "Member of the Commission"), aliases (the
      transcript names that differ from the full name, e.g. Greek or Cyrillic spellings; never
      the chair's title).
-   - Body: links to the group, party and country; the number of interventions of each kind.
+   - Body: links to the group, party and country, and the roles. Nothing specific to one
+     debate: the same note serves every debate the person speaks in.
 4. groups/: one note per political group.
    - File name = the EP label ("PPE", "S&D", "Verts-ALE").
    - Frontmatter: type (group), group_id, label, name, aliases (the label and the name when
@@ -75,9 +80,14 @@ Create only these six folders, inside vault/: the agent adds entities/, topics/ 
 in later steps.
 
 SAFETY AND OPTIONS
-- If notes already exist in these six folders, stop with a message. Rebuild them only with
-  --overwrite (the enriched notes would be lost).
-- Print the number of notes written in each folder.
+- Each run adds one debate. People, groups, parties and countries shared with a debate already
+  in the vault keep their notes: never replace an existing note in people/, groups/, parties/
+  or countries/, because the agent may have enriched it.
+- For a person who already has a note, report what to check: transcript spellings missing from
+  the note's aliases, and a group in this debate that differs from the note's group.
+- If the debate's own notes (its speech notes and its debate note) already exist, stop with a
+  message. With --overwrite, rebuild only those notes (their enrichment would be lost).
+- Print, for each folder, the number of notes created and the number of existing notes kept.
 
 CHECKS
 - Every [[link]] points to a note that exists: no unresolved links.

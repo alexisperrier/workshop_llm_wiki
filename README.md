@@ -1,6 +1,6 @@
-# Workshop: build an LLM wiki from a European Parliament debate
+# Workshop: build an LLM wiki from European Parliament debates
 
-In this workshop you turn one plenary debate of the European Parliament into a wiki you can explore in Obsidian. You work with an AI agent called OpenCode: you tell it what to do in plain English, and it reads and writes the files for you. You don't need to know how to code.
+In this workshop you turn two plenary debates of the European Parliament on migration into a wiki you can explore in Obsidian. You work with an AI agent called OpenCode: you tell it what to do in plain English, and it reads and writes the files for you. You don't need to know how to code.
 
 Over the steps you will:
 
@@ -9,7 +9,8 @@ Over the steps you will:
 * check what the agent produced, and fix the rules;
 * explore the graph of the debate;
 * ask questions to a chatbot that answers from your wiki;
-* look for fallacies in the speeches.
+* look for fallacies in the speeches;
+* add a second debate, and see how the wiki grows.
 
 At each step you make a decision and you check the result. The agent does the typing; whether the result is right is up to you.
 
@@ -18,12 +19,13 @@ At each step you make a decision and you check the result. The agent does the ty
 | File or folder | What it is |
 |---|---|
 | `README.md` | this guide |
-| `debate.json` | the debate: every speech, with its speaker, in the original language |
-| `to_markdown.py` | a script (a small program) that turns `debate.json` into notes |
+| `debate_ceuta.json` | the first debate (Ceuta, 15 September 2026): every speech, with its speaker, in the original language |
+| `debate_return_regulation.json` | the second debate (Return Regulation, 16 June 2026), added in step 9 |
+| `to_markdown.py` | a script (a small program) that turns a debate file into notes |
 | `to_markdown_prompt.txt` | the prompt that produced `to_markdown.py` |
 | `AGENTS.md` | the rules for the agent; you complete it in step 3 |
 | `fallacy_detection_codebook.md` | the definitions of the fallacies, for step 8 |
-| `vault/` | your wiki, created in step 2 by `to_markdown.py`, then enriched step by step. In Obsidian a folder of notes is called a *vault* |
+| `vault/` | your wiki, empty at the start. `to_markdown.py` fills it in step 2, then the agent enriches it step by step. In Obsidian a folder of notes is called a *vault* |
 
 ## Background
 
@@ -54,9 +56,9 @@ The data has three levels:
 | Debate (agenda item) | the Ceuta debate |
 | Intervention | a speech, a blue-card question or answer, a written statement |
 
-`debate.json` holds one debate of that dataset.
+`debate_ceuta.json` and `debate_return_regulation.json` each hold one debate of that dataset.
 
-### The debate
+### The first debate: Ceuta
 
 | | |
 |---|---|
@@ -68,13 +70,26 @@ The data has three levels:
 | Political groups | all 9 |
 | Blue cards | 9 question → answer exchanges, all between different groups |
 
+### The second debate: the Return Regulation (step 9)
+
+| | |
+|---|---|
+| Title | Common system for the return of third-country nationals staying illegally in the Union (Return Regulation) |
+| Date | Tuesday 16 June 2026, 14:15–14:44, the day before the final vote |
+| Source page | https://www.europarl.europa.eu/doceo/document/CRE-10-2026-06-16-ITM-011_EN.html |
+| Interventions | 14 spoken: the rapporteur Malik Azmani (Renew), Commissioner Magnus Brunner, one speaker per group and the chair (Javi López). Plus 6 written statements |
+| Languages | 7; English and French are the most frequent |
+| Political groups | all 9 (NI only in a written statement) |
+| Blue cards | none |
+| Link with the Ceuta debate | 11 of its 17 speakers also spoke on Ceuta, among them Magnus Brunner, François-Xavier Bellamy, Fabienne Keller and Fabrice Leggeri |
+
 ### Key notions
 
 **Wiki.** A set of pages that link to each other, with one page per subject. Wikipedia is the best known. 
 
 **LLM wiki.** A wiki that an LLM writes and maintains from a set of sources, following rules that you write. The idea was described by Andrej Karpathy in April 2026 ([LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)). It has three parts:
 
-* the **sources**, which the LLM reads but never changes (`debate.json`);
+* the **sources**, which the LLM reads but never changes (`debate_ceuta.json`, then `debate_return_regulation.json`);
 * the **wiki**, the pages the LLM writes (`vault/`);
 * the **rules**, a file that sets the structure and the conventions (`AGENTS.md`).
 
@@ -96,7 +111,7 @@ language: "de"
 ---
 ```
 
-**JSON.** A text format for structured data, used by `debate.json`. It's made of named fields (`"title": "..."`) and lists (`[ ... ]`).
+**JSON.** A text format for structured data, used by the debate files. It's made of named fields (`"title": "..."`) and lists (`[ ... ]`).
 
 **AGENTS.md.** A file of instructions that OpenCode reads automatically every time you open this folder. It's how you give the agent rules that last for the whole project, instead of repeating them in every request.
 
@@ -106,7 +121,7 @@ language: "de"
 2. **Install OpenCode.** Download the desktop app from <https://opencode.ai/download> and install it.
 3. **Connect the model.** Follow your teacher's instructions to connect OpenCode to the model you'll use (in OpenCode, the `/connect` command). Or choose on of the free models that are made available in Opencode.
 4. **Open the folder in OpenCode.** Open the unzipped folder as a project. OpenCode now reads `AGENTS.md` by itself.
-5. **Install Obsidian.** Download it from <https://obsidian.md/download> and install it. You'll open the vault in step 2.
+5. **Install Obsidian and open the vault.** Download Obsidian from <https://obsidian.md/download> and install it. Choose *Open folder as vault* and select the `vault` folder inside this project. It's empty for now: the notes appear in step 2.
 6. **Check Python.** The script needs Python 3, which is already installed on most computers. In OpenCode, type:
 
    > Check that python3 is installed on this computer, and tell me its version.
@@ -130,21 +145,21 @@ Note : installing python may take some time or face hurdles. If after a few minu
 
 1. **Ask the agent to explain the data.** In OpenCode, with the **Plan** agent, type:
 
-   > Explain the structure of debate.json in simple terms: what are its main parts, and what does one intervention contain? Show me the intervention with order 210 as an example.
+   > Explain the structure of debate_ceuta.json in simple terms: what are its main parts, and what does one intervention contain? Show me the intervention with order 210 as an example.
 
 2. **Compare with the official transcript.** Open the source page of the debate (link in the table above) and find the speech of Jeroen Lenaers. It should match intervention 210.
 4. **Find the three levels** in what the agent showed you: sitting, debate, intervention. Which fields give the speaker's name, group, party and country? Which field gives the original language?
 
 ## Step 2. Turn the data into notes
 
-> `to_markdown.py` turns `debate.json` into markdown notes. It was written by an AI agent from the prompt below. Read the prompt: it shows how precise you need to be to get what you want.
+> `to_markdown.py` turns a debate file into markdown notes. It was written by an AI agent from the prompt below. Read the prompt: it shows how precise you need to be to get what you want.
 > The prompt that produced `to_markdown.py` is available in the file `to_markdown_prompt.txt`
 
 1. Start by asking Opencode what the script `to_markdown.py` does ?
 
 2. **Run the script.** In OpenCode, with the **Build** agent, type:
 
-   > Run the  `to_markdown.py` script and tell me how many notes were written in each folder.
+   > Run the `to_markdown.py` script on `debate_ceuta.json` and tell me how many notes were written in each folder.
    > If python is not installed ask me if I want to install it 
 
    You should get:
@@ -158,10 +173,12 @@ Note : installing python may take some time or face hurdles. If after a few minu
    | `parties/` | 46 |
    | `countries/` | 17 |
 
+   Speech notes are named after the date, the order in the day's verbatim and the speaker, e.g. `2026-09-15 210 Jeroen Lenaers`.
+
 
 > At this point **do not trust that the markdown files were created**. Since the agent, opencode, has read this README file it knows what asnwer it should produce. Never trust, always check.
 
-2. **Open the vault in Obsidian.** Choose *Open folder as vault* and select the `vault` folder inside this project. Open the graph view (Cmd+G on Mac, Ctrl+G on Windows) and take a screenshot: you will compare it with the enriched graph in step 6.
+2. **Look at the vault in Obsidian.** The notes appear in the vault you opened during setup. If you haven't opened it yet, choose *Open folder as vault* and select the `vault` folder inside this project. Open the graph view (Cmd+G on Mac, Ctrl+G on Windows) and take a screenshot: you will compare it with the enriched graph in step 6.
 3. **Check the notes:**
    * Open 3 speech notes and compare them with the source page.
    * Open the note `Konstantinos Arvanitis`: what is in its `aliases`, and why?
@@ -173,7 +190,7 @@ Note : installing python may take some time or face hurdles. If after a few minu
 
    Would you make the same choices? If not, ask OpenCode to change the script, then run it again with `--overwrite`.
 
-  > (*) Note: the 7 written statements at the end of the debate. These are texts that MEPs submitted in writing instead of speaking. The verbatim report prints them after the debate, under the heading "Déclarations écrites (article 178)" (order 284 in debate.json), with authors such as Rihards Kols and Loucas Fourlas. Nobody said them in the chamber, so nobody heard them and no one could reply with a blue card. The script still gives each one a note in speeches/, like a spoken intervention, named for example 287 Loucas Fourlas (written) and marked kind: "written". That's why there are 81 speech notes and not 74.
+  > (*) Note: the 7 written statements at the end of the debate. These are texts that MEPs submitted in writing instead of speaking. The verbatim report prints them after the debate, under the heading "Déclarations écrites (article 178)" (order 284 in debate_ceuta.json), with authors such as Rihards Kols and Loucas Fourlas. Nobody said them in the chamber, so nobody heard them and no one could reply with a blue card. The script still gives each one a note in speeches/, like a spoken intervention, named for example 287 Loucas Fourlas (written) and marked kind: "written". That's why there are 81 speech notes and not 74.
 
 
 ## Step 3. Write the rules: AGENTS.md
@@ -281,32 +298,57 @@ This is the main design work. `AGENTS.md` already contains the parts that don't 
 
 `fallacy_detection_codebook.md` defines 6 fallacies: ad hominem, straw man, false dilemma, slippery slope, false cause, hasty generalisation. It also defines a control code for strong claims made without support, which is not a fallacy.
 
-1. **Prepare the speeches without their authors.** Knowing the speaker or the group can bias the labels. In the workshop project (Build agent), type:
+1. **Label the speeches.** In OpenCode, with the **Build** agent, type:
 
-   > Create a folder named ceuta_blind next to this project folder (in its parent folder, not inside it). For each note in vault/speeches/, write a file <speech_id>.txt that contains only the text of the speech: no name, no group, no party, no country. Then copy fallacy_detection_codebook.md into ceuta_blind as AGENTS.md.
+   > Following fallacy_detection_codebook.md, label the fallacies in the speech notes 207 to 226. Judge only the text of each speech (its "## Text" section), and ignore the speaker's name, group, party and country. Add the labels to each note in the format given by the codebook, and link each label to its code's note in vault/fallacies/.
 
-   The folder must be outside the project. Otherwise OpenCode would also load the project's `AGENTS.md`, which knows the speakers.
+   Then do the same for 227 to 246, then 247 to 266, then 267 to 291.
 
-2. **Label the speeches.** Open the `ceuta_blind` folder as a new project in OpenCode, in a new session, and type:
+2. **Check 5 labels.** Pick 5 labelled speeches. For each label, read the quote, the conclusion and the defect, then the code's definition in the codebook. Is it really this fallacy, or only a strong claim, a slogan or a rhetorical question? "None" is a valid answer: did the agent find fallacies in speeches that have none?
 
-   > Following AGENTS.md, label the fallacies in the first 20 files, in alphabetical order. Write the results in results.yaml.
+3. **Look at the result in the graph:** fallacy notes, speeches, groups.
 
-3. **Compare with a classmate.** Two of you label the same 20 files, each in your own session. Then type:
-
-   > Compare my results.yaml with my classmate's results_B.yaml. For each code, count the speeches labelled by both of us, by me only, and by my classmate only.
-
-   Where you disagree, read the speech: who is right?
-
-4. **Bring the labels into the wiki.** Back in the workshop project, type:
-
-   > Read ../ceuta_blind/results.yaml. Find each speech in vault/speeches/ by its speech_id and add a "## Fallacies" section with the labels. Create one note per code in vault/fallacies/, with its definition from fallacy_detection_codebook.md, and link the labels to it.
-
-5. **Look at the result in the graph:** fallacy notes, speeches, groups.
+**The model's own bias.** Each speech note shows who is speaking. Even when it's told to ignore this, the model has seen the speaker's name and group. Models learn associations between parties and kinds of arguments from the texts they were trained on: press articles, fact-checks and commentary criticise some parties' rhetoric much more than others'. In borderline cases, which are most cases, these associations can tip the label one way or the other. The instruction to judge only the text reduces this effect, but doesn't remove it.
 
 Be careful with what you conclude. With 3 to 12 speeches per group, no comparison between groups holds. An earlier test with one model, on 150 speeches of this dataset, found more fallacies in groups further from the centre. With one model, this can't be told apart from the model's own bias.
+
+## Step 9. Add a second debate
+
+A wiki is made to grow. When a new source comes in, the agent adds its notes and updates the pages that already exist. You add the debate on the Return Regulation (16 June 2026): it's about returns of people with no right to stay, and 11 of its 17 speakers also spoke on Ceuta.
+
+1. **Convert the debate.** In OpenCode, with the **Build** agent, type:
+
+   > Run the `to_markdown.py` script on `debate_return_regulation.json` and tell me how many notes it created and how many it kept.
+
+   You should get 20 new speech notes and 1 new debate note. Of the 17 speakers, 11 already have a note: the script keeps those notes, with what the agent added to them, and creates the 6 others. It also tells you that Nikola Bartůšek was in the NI group in June and in ECR in September: each speech note records the speaker's group on the day of the speech.
+
+2. **Update the rules.** Your rules were written for Ceuta. Type:
+
+   > Read the speech notes of the Return Regulation debate. Propose the question that their positions answer, and the topics to add to the list in AGENTS.md. Don't change anything yet.
+
+   Decide what to keep, then ask the agent to write it into `AGENTS.md`. Check that your chair rule still works: in this debate the chair is Javi López.
+
+3. **Enrich the new notes.** Type:
+
+   > Following AGENTS.md, enrich the speech notes of the Return Regulation debate.
+
+4. **Update the pages that already exist.** This is what makes one wiki, not two. Type:
+
+   > Following AGENTS.md, add the Return Regulation debate to the synthesis pages: the topic notes, the group notes and index.md. Then run the lint, and report only.
+
+   Check two notes: the topic `Returns` should now cite speeches from both debates, and the note `Magnus Brunner` should have backlinks from both.
+
+5. **Label the fallacies** in the new speeches. Type:
+
+   > Following fallacy_detection_codebook.md, label the fallacies in the speech notes of the Return Regulation debate. Judge only the text of each speech (its "## Text" section), and ignore the speaker's name, group, party and country.
+
+6. **Look at the two debates together:**
+   * In the graph, open the local graph of `Magnus Brunner` or `Fabrice Leggeri`: they connect the two debates.
+   * With the **Plan** agent, ask a question that needs both debates, e.g. "Did the MEPs who spoke in both debates say the same thing about returns?" Check the answer in the notes.
 
 ## What you hand in
 
 * Your enriched vault (`vault/`) and your screenshot of the graph from step 2.
 * `AGENTS.v1.md` and your final `AGENTS.md`, with what you changed between them and why.
-* The step-4 checks, your 5 chatbot questions with their scores, and the fallacy comparison table.
+* The step-4 checks, your 5 chatbot questions with their scores, and your 5 fallacy checks.
+* For step 9: what changed in the pages that already existed.

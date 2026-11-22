@@ -1,6 +1,9 @@
-# AGENTS.md: LLM wiki of the Ceuta debate
+# AGENTS.md: LLM wiki of European Parliament debates
 
-You maintain an Obsidian wiki (`vault/`) built from one European Parliament plenary debate (`debate.json`): *The recent hybrid attacks and instrumentalisation of migrants in Ceuta and the need for a coordinated response to protect the EU's external borders*, 15 September 2026.
+You maintain an Obsidian wiki (`vault/`) built from European Parliament plenary debates on migration, one source file per debate:
+
+* `debate_ceuta.json`: *The recent hybrid attacks and instrumentalisation of migrants in Ceuta and the need for a coordinated response to protect the EU's external borders*, 15 September 2026, added first;
+* `debate_return_regulation.json`: *Common system for the return of third-country nationals staying illegally in the Union (Return Regulation)*, 16 June 2026, added in step 9.
 
 Follow these rules exactly. When a case is not covered, stop and ask the user. Don't invent a convention.
 
@@ -8,7 +11,7 @@ Follow these rules exactly. When a case is not covered, stop and ask the user. D
 
 | Path | Role | You may |
 |---|---|---|
-| `debate.json` | the source: one debate, extracted from the dataset | read only |
+| `debate_*.json` | the sources: one debate per file, extracted from the dataset | read only |
 | `fallacy_detection_codebook.md` | fallacy codebook, used in step 8 only | read only |
 | `to_markdown.py` | the converter that wrote the step-2 notes | run only when asked |
 | `vault/` | the wiki | read and write |
@@ -18,14 +21,14 @@ Vault folders:
 | Folder | Notes | Created by |
 |---|---|---|
 | `speeches/` | one note per intervention | converter |
-| `debates/` | the debate note | converter |
+| `debates/` | one note per debate | converter |
 | `people/` | speakers; people mentioned in speeches | converter; you, for people mentioned |
 | `groups/` | the 9 EP political groups | converter |
 | `parties/` | national parties of the speakers | converter |
 | `countries/` | speakers' countries; countries mentioned | converter; you, for countries mentioned |
 | `entities/` | organisations, places, laws and agreements, events | you |
 | `topics/` | the topics of section 5 | you |
-| `fallacies/` | step 8 only | step 8 |
+| `fallacies/` | one note per code of the fallacy codebook | you, in step 8 |
 
 `index.md` lists all notes. `log.md` records what you did.
 
@@ -33,7 +36,7 @@ Vault folders:
 
 * The text of a speech, in the original language.
 * The step-2 frontmatter fields, and the header line `Speaker: … · Group: … · Party: …`.
-* Anything in `debate.json`.
+* Anything in the `debate_*.json` files.
 * Don't create, rename or delete group or party notes. All of them exist.
 * Don't infer a speaker's group, party or country from the text: the data gives them.
 * Don't write backlinks. Obsidian computes them.
@@ -54,7 +57,8 @@ Never write a link to a name that is not a file name in the vault: an unresolved
 
 **The chair.**
 * "President", "Presidente", "Le Président", "Madam President", "Mr President" addressed to the chair mean the person chairing at that moment, not the President of the Parliament.
-* In this debate: Antonella Sberna up to intervention `order` 219. Younous Omarjee from `order` 220 (`PRÉSIDENCE: YOUNOUS OMARJEE`).
+* The `## Chair` section of each debate note says who chairs from the start, and from which `order` another chair takes over. For a speech, the chair is the last one listed before its `order`.
+* Ceuta debate: Antonella Sberna up to `order` 219, Younous Omarjee from `order` 220. Return Regulation debate: Javi López.
 * When a speaker names another president ("President von der Leyen", "President Metsola"), link that person.
 
 **EP political groups.** File names and aliases:
@@ -149,6 +153,11 @@ Closed list. File names are exact. Don't create other topic notes: write proposa
 | `Regularisation of migrants` | Spain's regularisation scheme, pull factors |
 | `Sovereignty of Ceuta and Melilla` | "Ceuta is Spain", territorial integrity |
 | `Responsibility of the Spanish government` | criticism or defence of how the Spanish government handled the events |
+| `Return hubs` | return centres in third countries, e.g. the Italian centre in Albania |
+| `Detention of migrants` | detention before return, including families and children |
+| `Majorities in Parliament` | who votes with whom, e.g. the PPE and the groups to its right |
+
+The last three topics were added with the Return Regulation debate (step 9).
 
 A speech gets a topic only if it says something about it, not if it merely uses a word.
 
@@ -168,7 +177,7 @@ Append these sections after the text:
 <2–3 sentences in English: what the speaker says, and to whom if it is a blue-card question or answer.>
 
 ## Position
-- Question: Should the EU respond to the events in Ceuta mainly by strengthening the protection of its external borders?
+- Question: <the question of this speech's debate, from the table below>
 - Position: supports | opposes | mixed | not stated
 - Justification: <one sentence>
 - Quote: "<≤ 25 words, original language>" (translation by the agent: "<English>")
@@ -179,6 +188,13 @@ Append these sections after the text:
 ## Topics
 - [[<Topic note>]]
 ```
+
+The question of each debate:
+
+| Debate | Question |
+|---|---|
+| Ceuta (15 September 2026) | Should the EU respond to the events in Ceuta mainly by strengthening the protection of its external borders? |
+| Return Regulation (16 June 2026) | Should Parliament adopt the Return Regulation in the version put to the vote? |
 
 The summary, justification and translations are yours. Mark translations as "translation by the agent", because the dataset has no official translation.
 
@@ -192,7 +208,7 @@ The summary, justification and translations are yours. Mark translations as "tra
 * Before a batch, list the existing notes and aliases in `people/`, `countries/`, `entities/` and `topics/`.
 * Don't modify notes outside the batch, except to add aliases to entity notes.
 * After a batch:
-  * append to `vault/log.md`: date, batch (first and last `order`), notes enriched, entity notes created, entity notes reused;
+  * append to `vault/log.md`: date, debate, batch (first and last `order`), notes enriched, entity notes created, entity notes reused;
   * report the same in the chat.
 
 ## 8. Lint
@@ -217,22 +233,38 @@ Fix only what the user approves. To merge duplicates:
 
 When the user asks for the synthesis:
 
-* **Each topic note:** add `## Positions by group`, with one short paragraph per group whose speakers addressed the topic. Then add `## Speeches`, the list of speech notes linked to the topic.
-* **Each group note:** add `## In this debate`, with the main points its speakers made.
-* **The debate note:** add `## Overview` (5 sentences) and `## Main lines of division`.
+* **Each topic note:** add `## Positions by group`, with one short paragraph per group whose speakers addressed the topic, citing speeches from every debate that addressed it. Then add `## Speeches`, the list of speech notes linked to the topic, by debate.
+* **Each group note:** add `## In the debates`, with one subsection per debate and the main points its speakers made.
+* **Each debate note:** add `## Overview` (5 sentences) and `## Main lines of division`.
 * **`index.md`:** every note, by folder, with a one-line description.
 
 Every claim in a synthesis links to at least one speech note that supports it. Never write a claim without a link.
 
 ## 10. Query mode
 
-When the user asks a question about the debate:
+When the user asks a question about the debates:
 
 * Don't modify any file.
 * Start from `index.md`, follow the links, and read the speech notes.
 * Answer only from the vault. Cite the speech notes as `[[…]]`, and quote the original text with its translation.
 * If the vault doesn't contain the answer, say "Not in the vault." Don't fill gaps from general knowledge.
 
-## 11. Out of scope
+## 11. Fallacy labelling (step 8)
 
-Fallacy labelling (step 8) runs in the folder `ceuta_blind`, next to this project folder, with its own `AGENTS.md`. Don't label fallacies here, and never copy speaker names, groups, parties or countries into `ceuta_blind`.
+Only when the user asks for it:
+
+* Use only the codes of `fallacy_detection_codebook.md`, with its rules and its output format. "None" is a valid answer.
+* Judge only the text of the speech (its `## Text` section). Ignore the speaker's name, group, party and country, and the other sections of the note (summary, position, entities, topics).
+* Work in batches of about 20 notes, in debate order, as in section 7.
+* Create the notes in `fallacies/` as the codebook says, the first time a code is used.
+* Don't change anything else in the speech notes.
+
+## 12. Adding a debate (step 9)
+
+When the user has run `to_markdown.py` on a new debate file:
+
+1. Read the new speech notes. Propose the question for the table of section 6, the topics to add to section 5 (with one example speech each) and any rule that doesn't fit this debate, such as the chair. Wait for the user's decision before changing this file.
+2. Enrich the new speech notes as in sections 4 to 7, in batches of about 20. Many people, groups, parties and entities already have notes: link them, don't create new ones, and add new spellings to their `aliases`.
+3. If the converter reported a person whose group changed, leave the person's note as it is: each speech note gives the group on the day of the speech.
+4. Update the pages that already exist, as in section 9: the topic notes, the group notes, the entity notes and `index.md`. Add the new debate next to what is there; don't remove or rewrite what came from the earlier debates.
+5. Run the lint of section 8, and report.

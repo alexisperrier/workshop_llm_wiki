@@ -7,7 +7,7 @@ Six fallacy codes and one control code, taken from a draft codebook (v0.1). The 
 1. Code the reasoning, not the tone or the political position. Persuasion and strong opinions are not fallacies.
 2. Every positive must cite an exact span, name the conclusion that the span is meant to support, and name the defect.
 3. "None" is a valid and frequent answer.
-4. Label from the text only. You don't know who the speaker is, or which group or country they belong to.
+4. Judge only the text of the speech (its `## Text` section). Ignore the speaker's name, group, party and country, even though the note shows them.
 
 ## Codes
 
@@ -30,17 +30,25 @@ Rhetorical devices without a defect in the reasoning: rhetorical questions, repe
 
 ## Output format
 
-One block per speech:
+In each speech note, add the codes found to the frontmatter, as plain values:
 
 ```yaml
-speech_id: "<speech_id>"
-fallacies:
-  - code: <CODE>
-    span_original: "<exact words from the text>"
-    span_en: "<your English translation>"
-    conclusion: "<the conclusion the span supports>"
-    defect: "<what is wrong with the reasoning>"
-    strength: clear        # clear | borderline
+fallacies: [STRAW_MAN, UNSUPPORTED_ASSERTION]
 ```
 
-When the speech has none: `fallacies: []`.
+Then append this section after the text, with one item per instance:
+
+```markdown
+## Fallacies
+
+- [[STRAW_MAN]] (clear | borderline)
+  - Quote: "<exact words from the text>" (translation by the agent: "<English>")
+  - Conclusion: <the conclusion the quote supports>
+  - Defect: <what is wrong with the reasoning>
+```
+
+When the speech has none: `fallacies: []` in the frontmatter, and `None.` under `## Fallacies`.
+
+## Fallacy notes
+
+One note per code in `vault/fallacies/`, named after the code (`STRAW_MAN.md`), with the code's definition from this file. The note `UNSUPPORTED_ASSERTION.md` says that it is a control code, not a fallacy.

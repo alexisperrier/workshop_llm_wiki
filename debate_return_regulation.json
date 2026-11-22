@@ -1,0 +1,1384 @@
+{
+  "source": {
+    "dataset": "https://github.com/SkatAI/eu-parliament-verbatim",
+    "file": "data/2026-06-16.json",
+    "file_url": "https://raw.githubusercontent.com/SkatAI/eu-parliament-verbatim/refs/heads/main/data/2026-06-16.json",
+    "dataset_generated_at": "2026-10-11T10:22:18+00:00",
+    "extracted_at": "2026-11-22",
+    "notes": [
+      "One agenda item extracted from the sitting file; intervention fields are unchanged from the dataset.",
+      "Written statements (Rule 178, 6 interventions): in the source the speaker label is glued to the text; it was split back into speaker_label, speaker_name_in_transcript and speaker_process_in_transcript.",
+      "Texts are in the original language of each speaker (text_source). There is no English translation field."
+    ]
+  },
+  "sitting": {
+    "date": "2026-06-16",
+    "parliamentary_term": 10,
+    "url": "https://www.europarl.europa.eu/doceo/document/CRE-10-2026-06-16_EN.html"
+  },
+  "debate": {
+    "id": "CRE-10-2026-06-16-ITM-011",
+    "item_number": 11,
+    "sub_item_number": null,
+    "title": "Common system for the return of third-country nationals staying illegally in the Union (Return Regulation) (debate)",
+    "titles": {
+      "hr": "Zajednički sustav za vraćanje državljana trećih zemalja koji nezakonito borave u Uniji (Uredba o vraćanju) (rasprava)",
+      "pl": "Wspólny system powrotów obywateli państw trzecich nielegalnie przebywających w Unii (rozporządzenie powrotowe) (debata)",
+      "ga": "Comhchóras chun náisiúnaigh tríú tír atá ag fanacht go neamhdhleathach san Aontas a fhilleadh (an Treoir um Fhilleadh) (díospóireacht)",
+      "it": "Sistema comune per il rimpatrio dei cittadini di paesi terzi il cui soggiorno nell'Unione è irregolare (regolamento sui rimpatri) (discussione)",
+      "ro": "Un sistem comun de returnare a resortisanților țărilor terțe cu ședere ilegală în Uniune (dezbatere)",
+      "en": "Common system for the return of third-country nationals staying illegally in the Union (Return Regulation) (debate)",
+      "fi": "Yhteinen järjestelmä unionissa laittomasti oleskelevien kolmansien maiden kansalaisten palauttamiseksi (palauttamisasetus) (keskustelu)",
+      "lt": "Bendra neteisėtai Sąjungoje esančių trečiųjų šalių piliečių grąžinimo sistema (Grąžinimo reglamentas) (diskusijos)",
+      "el": "Κοινό σύστημα για την επιστροφή των υπηκόων τρίτων χωρών που διαμένουν παράνομα στην Ένωση (κανονισμός για τις επιστροφές) (συζήτηση)",
+      "sl": "Skupni sistem za vračanje državljanov tretjih držav, ki nezakonito prebivajo v Uniji (uredba o vračanju) (razprava)",
+      "da": "Fælles system for tilbagesendelse af tredjelandsstatsborgere med ulovligt ophold i Unionen (forordningen om tilbagesendelse) (forhandling)",
+      "mt": "Sistema komuni għar-ritorn ta’ ċittadini ta’ pajjiżi terzi li jkunu qegħdin illegalment fl-Unjoni (ir-Regolament dwar ir-Ritorn) (dibattitu)",
+      "hu": "Az Unióban jogellenesen tartózkodó harmadik országbeli állampolgárok visszaküldésére vonatkozó közös rendszer (visszaküldési rendelet) (vita)",
+      "bg": "Обща система за връщане на граждани на трети държави, пребиваващи незаконно в Съюза (Регламент относно връщането) (разискване)",
+      "et": "Ühine süsteem liidus ebaseaduslikult viibivate kolmandate riikide kodanike tagasisaatmiseks (tagasisaatmismäärus) (arutelu)",
+      "sk": "Spoločný systém pre návrat štátnych príslušníkov tretích krajín, ktorí sa v Únii zdržiavajú neoprávnene (nariadenie o návrate) (rozprava)",
+      "nl": "Gemeenschappelijk systeem voor de terugkeer van illegaal in de Unie verblijvende onderdanen van derde landen (terugkeerverordening) (debat)",
+      "pt": "Estabelecimento de um sistema comum de regresso dos nacionais de países terceiros em situação irregular na União (Regulamento relativo ao regresso) (debate)",
+      "lv": "Kopīga sistēma to trešo valstu valstspiederīgo atgriešanai, kuri Savienībā uzturas nelikumīgi (Atgriešanas regula) (debates)",
+      "fr": "Système commun en matière de retour des ressortissants de pays tiers en séjour irrégulier dans l’Union (règlement sur le retour) (débat)",
+      "de": "Gemeinsames System für die Rückkehr von illegal in der Union aufhältigen Drittstaatsangehörigen (Rückführungsverordnung) (Aussprache)",
+      "cs": "Společný systém navracení státních příslušníků třetích zemí neoprávněně pobývajících v Unii (nařízení o návratu) (rozprava)",
+      "es": "Sistema común para el retorno de los nacionales de terceros países en situación irregular en la Unión (Reglamento sobre el Retorno) (debate)",
+      "sv": "Gemensamt system för återvändande av tredjelandsmedborgare som vistas olagligt i unionen (återvändandeförordningen) (debatt)"
+    },
+    "url": "https://www.europarl.europa.eu/doceo/document/CRE-10-2026-06-16-ITM-011_EN.html",
+    "stats": {
+      "interventions": 22,
+      "by_kind": {
+        "spoken": 14,
+        "procedural": 2,
+        "written_statement": 6
+      },
+      "by_statement_type": {
+        "speech": 14,
+        "writtenStatements": 7,
+        "communication": 1
+      },
+      "speakers": 17,
+      "words": 4900,
+      "languages": {
+        "en": 8,
+        "fr": 5,
+        "pl": 3,
+        "es": 1,
+        "de": 1,
+        "fi": 1,
+        "bg": 1
+      }
+    },
+    "interventions": [
+      {
+        "id": "MTG-PL-2026-06-16-OTH-2017081987256",
+        "speech_id": "2017081987256",
+        "document_id": "CRE-10-2026-06-16-OTH-2017081987256",
+        "agenda_item_id": "CRE-10-2026-06-16-ITM-011",
+        "number": "2-0275-0000",
+        "order": 265,
+        "activity_type": "PLENARY_DEBATE_SPEECH",
+        "statement_type": "speech",
+        "participation_role": "SPEAKER",
+        "start_time": "2026-06-16T14:15:32.645+02:00",
+        "end_time": "2026-06-16T14:16:02.012+02:00",
+        "speaker_person_id": "125042",
+        "speaker_label": "President.",
+        "speaker_name_in_transcript": "President",
+        "speaker_role_in_transcript": null,
+        "speaker_process_in_transcript": null,
+        "on_behalf_of_group": null,
+        "original_languages": [
+          "en"
+        ],
+        "text_source": "en",
+        "paragraphs": [
+          {
+            "lang": "en",
+            "text": "The next item is the debate on the report by Mr Azmani, on behalf of the Committee on Civil Liberties, Justice and Home Affairs, on the common system for the return of third-country nationals staying illegally in the Union (Return Regulation) (COM(2025)0101 – C10‑0047/2025 – 2025/0059(COD)) (A10-0048/2026)."
+          },
+          {
+            "lang": "en",
+            "text": "I would like to inform Members that there will be only one round of political group speakers for this debate. Therefore, there is no catch-the-eye procedure and no blue cards will be accepted."
+          }
+        ],
+        "text": "The next item is the debate on the report by Mr Azmani, on behalf of the Committee on Civil Liberties, Justice and Home Affairs, on the common system for the return of third-country nationals staying illegally in the Union (Return Regulation) (COM(2025)0101 – C10‑0047/2025 – 2025/0059(COD)) (A10-0048/2026).\n\nI would like to inform Members that there will be only one round of political group speakers for this debate. Therefore, there is no catch-the-eye procedure and no blue cards will be accepted.",
+        "speaker": {
+          "person_id": "125042",
+          "in_mep_database": true,
+          "is_mep_on_date": true,
+          "first_name": "Javi",
+          "last_name": "López",
+          "full_name": "Javi López",
+          "gender": "MALE",
+          "nationality": {
+            "code": "ESP",
+            "name": "Spain"
+          },
+          "political_group": {
+            "id": "7038",
+            "label": "S&D",
+            "name": "Group of the Progressive Alliance of Socialists and Democrats in the European Parliament"
+          },
+          "national_party": {
+            "id": "6816",
+            "label": "PSC-PSOE",
+            "name": "Partit dels Socialistes de Catalunya (PSC-PSOE)"
+          }
+        }
+      },
+      {
+        "id": "MTG-PL-2026-06-16-OTH-2017081987258",
+        "speech_id": "2017081987258",
+        "document_id": "CRE-10-2026-06-16-OTH-2017081987258",
+        "agenda_item_id": "CRE-10-2026-06-16-ITM-011",
+        "number": "2-0276-0000",
+        "order": 266,
+        "activity_type": "PLENARY_DEBATE_SPEECH",
+        "statement_type": "speech",
+        "participation_role": "SPEAKER",
+        "start_time": "2026-06-16T14:16:02.012+02:00",
+        "end_time": "2026-06-16T14:21:07.184+02:00",
+        "speaker_person_id": "197781",
+        "speaker_label": "Malik Azmani, rapporteur.",
+        "speaker_name_in_transcript": "Malik Azmani",
+        "speaker_role_in_transcript": "rapporteur",
+        "speaker_process_in_transcript": null,
+        "on_behalf_of_group": null,
+        "original_languages": [
+          "en"
+        ],
+        "text_source": "en",
+        "paragraphs": [
+          {
+            "lang": "en",
+            "text": "Mr, President, dear Commissioner, dear colleagues, first of all, I would like to express my sincere gratitude to everyone who contributed to this file over the past months: the shadows, the secretariat, the legal services, the staff, the Cyprus Presidency, but also the Commissioner, the Commission and all the colleagues who engaged constructively throughout this process."
+          },
+          {
+            "lang": "en",
+            "text": "I am particularly grateful for the constructive cooperation that has characterised these negotiations. This was never going to be an easy file, and I knew that from the moment I was appointed as a rapporteur. There were moments when compromises seemed difficult to reach. However, through hard work, mutual trust and a shared sense of responsibility, we succeeded in delivering a balanced, legally sound and workable outcome. This final text is the product of intensive cooperation between Parliament, the Presidency and the Commission."
+          },
+          {
+            "lang": "en",
+            "text": "The Return Regulation is the last and missing piece of the Migration Pact that just entered into effect. Without an effective return policy, the Migration Pact remains incomplete. At present, only around 28% of third country nationals who have no legal right to remain in the European Union are actually returned to their countries of origin. And this situation places significant pressure on our migration and asylum systems, creates frustration among our citizens and ultimately undermines trust in our common European migration policy."
+          },
+          {
+            "lang": "en",
+            "text": "A credible migration system must rest on two equally important pillars. First, we must provide protection to those who genuinely need it. Second, we must ensure that those who do not have a right to stay effectively return. Without effective returns, the entire migration system risks losing legitimacy. And this is precisely why replacing the outdated Return Directive from 2008 was so necessary. The world has changed significantly since 2008, and our legal framework had to evolve accordingly. The Regulation before us provides a stronger and more harmonised European framework. It establishes clearer obligations for both third country nationals and Member States. It strengthens cooperation between Member States by introducing the European Return Order, an important first step towards mutual recognition of return decisions across the Union."
+          },
+          {
+            "lang": "en",
+            "text": "The Regulation also places a stronger focus on individuals who pose security threats. Ensuring the safety and security of our citizens remains one of our fundamental responsibilities. At the same time, voluntary returns remain the preferred and most sustainable solution. However, where a voluntary return does not take place, Member States must have the necessary tools to ensure that return decisions are effectively enforced. One of these tools is the newly introduced Return Hub and broader possibilities to act where there is a risk of absconding."
+          },
+          {
+            "lang": "en",
+            "text": "An equally important element is cooperation with third countries. For too long, insufficient cooperation from countries of origin has undermined return efforts. This Regulation introduces instruments that can encourage third countries to take back their own nationals. And if we are serious about increasing return rates, this cooperation is indispensable and is a key element for the majority also of this House."
+          },
+          {
+            "lang": "en",
+            "text": "As rapporteur, I have always believed that Europe needs a return system that is not only effective but also fair, legally sound, and fully consistent with our values. I believe this text achieves exactly that. As a rapporteur, I stand fully behind the text, and this demonstrates that effective migration management and respect for the rule of law are not contradictory objectives. On the contrary, they reinforce one another, and I look back with satisfaction on the cooperation among the various shadows over the past months."
+          },
+          {
+            "lang": "en",
+            "text": "Thanks to everyone's commitment and dedication, we have delivered a strong, effective and legally sound outcome. For all those reasons, I encourage colleagues to support this regulation tomorrow."
+          }
+        ],
+        "text": "Mr, President, dear Commissioner, dear colleagues, first of all, I would like to express my sincere gratitude to everyone who contributed to this file over the past months: the shadows, the secretariat, the legal services, the staff, the Cyprus Presidency, but also the Commissioner, the Commission and all the colleagues who engaged constructively throughout this process.\n\nI am particularly grateful for the constructive cooperation that has characterised these negotiations. This was never going to be an easy file, and I knew that from the moment I was appointed as a rapporteur. There were moments when compromises seemed difficult to reach. However, through hard work, mutual trust and a shared sense of responsibility, we succeeded in delivering a balanced, legally sound and workable outcome. This final text is the product of intensive cooperation between Parliament, the Presidency and the Commission.\n\nThe Return Regulation is the last and missing piece of the Migration Pact that just entered into effect. Without an effective return policy, the Migration Pact remains incomplete. At present, only around 28% of third country nationals who have no legal right to remain in the European Union are actually returned to their countries of origin. And this situation places significant pressure on our migration and asylum systems, creates frustration among our citizens and ultimately undermines trust in our common European migration policy.\n\nA credible migration system must rest on two equally important pillars. First, we must provide protection to those who genuinely need it. Second, we must ensure that those who do not have a right to stay effectively return. Without effective returns, the entire migration system risks losing legitimacy. And this is precisely why replacing the outdated Return Directive from 2008 was so necessary. The world has changed significantly since 2008, and our legal framework had to evolve accordingly. The Regulation before us provides a stronger and more harmonised European framework. It establishes clearer obligations for both third country nationals and Member States. It strengthens cooperation between Member States by introducing the European Return Order, an important first step towards mutual recognition of return decisions across the Union.\n\nThe Regulation also places a stronger focus on individuals who pose security threats. Ensuring the safety and security of our citizens remains one of our fundamental responsibilities. At the same time, voluntary returns remain the preferred and most sustainable solution. However, where a voluntary return does not take place, Member States must have the necessary tools to ensure that return decisions are effectively enforced. One of these tools is the newly introduced Return Hub and broader possibilities to act where there is a risk of absconding.\n\nAn equally important element is cooperation with third countries. For too long, insufficient cooperation from countries of origin has undermined return efforts. This Regulation introduces instruments that can encourage third countries to take back their own nationals. And if we are serious about increasing return rates, this cooperation is indispensable and is a key element for the majority also of this House.\n\nAs rapporteur, I have always believed that Europe needs a return system that is not only effective but also fair, legally sound, and fully consistent with our values. I believe this text achieves exactly that. As a rapporteur, I stand fully behind the text, and this demonstrates that effective migration management and respect for the rule of law are not contradictory objectives. On the contrary, they reinforce one another, and I look back with satisfaction on the cooperation among the various shadows over the past months.\n\nThanks to everyone's commitment and dedication, we have delivered a strong, effective and legally sound outcome. For all those reasons, I encourage colleagues to support this regulation tomorrow.",
+        "speaker": {
+          "person_id": "197781",
+          "in_mep_database": true,
+          "is_mep_on_date": true,
+          "first_name": "Malik",
+          "last_name": "Azmani",
+          "full_name": "Malik Azmani",
+          "gender": "MALE",
+          "nationality": {
+            "code": "NLD",
+            "name": "Netherlands"
+          },
+          "political_group": {
+            "id": "7035",
+            "label": "Renew",
+            "name": "Renew Europe"
+          },
+          "national_party": {
+            "id": "6691",
+            "label": "VVD",
+            "name": "VVD"
+          }
+        }
+      },
+      {
+        "id": "MTG-PL-2026-06-16-OTH-2017081987260",
+        "speech_id": "2017081987260",
+        "document_id": "CRE-10-2026-06-16-OTH-2017081987260",
+        "agenda_item_id": "CRE-10-2026-06-16-ITM-011",
+        "number": "2-0277-0000",
+        "order": 267,
+        "activity_type": "PLENARY_DEBATE_SPEECH",
+        "statement_type": "speech",
+        "participation_role": "SPEAKER",
+        "start_time": "2026-06-16T14:21:14.889+02:00",
+        "end_time": "2026-06-16T14:24:21.879+02:00",
+        "speaker_person_id": "263974",
+        "speaker_label": "Magnus Brunner, Member of the Commission.",
+        "speaker_name_in_transcript": "Magnus Brunner",
+        "speaker_role_in_transcript": "Member of the Commission",
+        "speaker_process_in_transcript": null,
+        "on_behalf_of_group": null,
+        "original_languages": [
+          "en"
+        ],
+        "text_source": "en",
+        "paragraphs": [
+          {
+            "lang": "en",
+            "text": "Mr President, honourable Members, tomorrow's vote on the Return Regulation comes a few days after the entry into application of the Pact on Migration and Asylum. Finally, there are actually no longer any missing pieces in this whole European reform – our major reform – with which we are bringing our European House in order."
+          },
+          {
+            "lang": "en",
+            "text": "Ten years ago, we did take a lot of responsibility as a European Union, but, as I always like to say, we didn't have a system, we didn't have rules – or we didn't have the right rules – and we didn't have control over what is happening in the European Union."
+          },
+          {
+            "lang": "en",
+            "text": "So now we are actually opening a new chapter with fair rules, with firm rules, with more effective rules, also, that counter abuses with a strong balance between solidarity and responsibility, with better control of our borders, also, thanks to new tools and new technology – the Entry/Exit System, for instance – and also with a stronger and more assertive migration diplomacy."
+          },
+          {
+            "lang": "en",
+            "text": "We have already taken a lot of actions, and it's actually starting to pay off. We've seen a decrease of illegal migration of 55 % in the last two years – on some routes, like the Western Balkan route, even of 90 % in the last three years. But –and that's what tomorrow is about – also, we need to get better in returning, of course, people who are in Europe without any right."
+          },
+          {
+            "lang": "en",
+            "text": "Today, as we know, only slightly more than one out of four people who have no right to stay in the European Union are actually being returned. This is just not acceptable and not sustainable. The citizens in Europe cannot accept, which I totally understand, that people don't respect our rules also. The Return Regulation, I think, is an important answer to the concerns that citizens in Europe actually have."
+          },
+          {
+            "lang": "en",
+            "text": "We will make return swifter, more effective, while also, of course, respecting the people's rights. And it will give us stronger tools to return people who don't cooperate, as you mentioned, with the authorities, if they run away from their obligation, if they do not return voluntarily, or especially if they pose a security risk to the European Union. So this regulation tells everybody that it is us and not the smugglers deciding who can stay in the in the European Union and who must leave."
+          },
+          {
+            "lang": "en",
+            "text": "I would like to thank this House and in particular, of course, you, Mr Azmani, as rapporteur, all the shadow rapporteurs, of course, and the whole negotiating teams also for their work on this key instrument. I think it is really a success."
+          }
+        ],
+        "text": "Mr President, honourable Members, tomorrow's vote on the Return Regulation comes a few days after the entry into application of the Pact on Migration and Asylum. Finally, there are actually no longer any missing pieces in this whole European reform – our major reform – with which we are bringing our European House in order.\n\nTen years ago, we did take a lot of responsibility as a European Union, but, as I always like to say, we didn't have a system, we didn't have rules – or we didn't have the right rules – and we didn't have control over what is happening in the European Union.\n\nSo now we are actually opening a new chapter with fair rules, with firm rules, with more effective rules, also, that counter abuses with a strong balance between solidarity and responsibility, with better control of our borders, also, thanks to new tools and new technology – the Entry/Exit System, for instance – and also with a stronger and more assertive migration diplomacy.\n\nWe have already taken a lot of actions, and it's actually starting to pay off. We've seen a decrease of illegal migration of 55 % in the last two years – on some routes, like the Western Balkan route, even of 90 % in the last three years. But –and that's what tomorrow is about – also, we need to get better in returning, of course, people who are in Europe without any right.\n\nToday, as we know, only slightly more than one out of four people who have no right to stay in the European Union are actually being returned. This is just not acceptable and not sustainable. The citizens in Europe cannot accept, which I totally understand, that people don't respect our rules also. The Return Regulation, I think, is an important answer to the concerns that citizens in Europe actually have.\n\nWe will make return swifter, more effective, while also, of course, respecting the people's rights. And it will give us stronger tools to return people who don't cooperate, as you mentioned, with the authorities, if they run away from their obligation, if they do not return voluntarily, or especially if they pose a security risk to the European Union. So this regulation tells everybody that it is us and not the smugglers deciding who can stay in the in the European Union and who must leave.\n\nI would like to thank this House and in particular, of course, you, Mr Azmani, as rapporteur, all the shadow rapporteurs, of course, and the whole negotiating teams also for their work on this key instrument. I think it is really a success.",
+        "speaker": {
+          "person_id": "263974",
+          "in_mep_database": false,
+          "is_mep_on_date": false,
+          "first_name": null,
+          "last_name": null,
+          "full_name": "Magnus Brunner",
+          "nationality": null,
+          "political_group": null,
+          "national_party": null
+        }
+      },
+      {
+        "id": "MTG-PL-2026-06-16-OTH-2017081987262",
+        "speech_id": "2017081987262",
+        "document_id": "CRE-10-2026-06-16-OTH-2017081987262",
+        "agenda_item_id": "CRE-10-2026-06-16-ITM-011",
+        "number": "2-0278-0000",
+        "order": 268,
+        "activity_type": "PLENARY_DEBATE_SPEECH",
+        "statement_type": "speech",
+        "participation_role": "SPEAKER",
+        "start_time": "2026-06-16T14:24:28.334+02:00",
+        "end_time": "2026-06-16T14:27:03.531+02:00",
+        "speaker_person_id": "197534",
+        "speaker_label": "François-Xavier Bellamy, au nom du groupe PPE.",
+        "speaker_name_in_transcript": "François-Xavier Bellamy",
+        "speaker_role_in_transcript": "au nom du groupe PPE",
+        "speaker_process_in_transcript": null,
+        "on_behalf_of_group": "PPE",
+        "original_languages": [
+          "fr"
+        ],
+        "text_source": "fr",
+        "paragraphs": [
+          {
+            "lang": "fr",
+            "text": "Monsieur le Président, chers collègues, nous y sommes. Demain aura lieu le vote final sur le règlement retour. C'est la fin de plusieurs décennies d'impuissance face à l'immigration illégale et de huit longues années de blocage dans la révision de la directive retour, qui disparaîtra enfin dans quelques jours. Le droit ne protégeait que celui qui avait enfreint la loi. Désormais, nous remettons la règle à l'endroit. Quand moins de 20 % des décisions de retour en Europe sont mises en œuvre aujourd'hui, 100 % pourront l'être demain. Pas dans deux ans comme certains le voulaient, demain."
+          },
+          {
+            "lang": "fr",
+            "text": "Demain, nos États retrouveront la possibilité d'expulser. Les délais de rétention seront augmentés sans limite pour les individus qui représentent un danger. Nos policiers et nos gendarmes auront enfin la base légale nécessaire pour lutter contre les passeurs. Un crime, un délit vaudra une interdiction d'entrée. Les recours ne serviront plus à retarder l'expulsion et les centres de retour mettront fin au chantage des régimes qui empêchent le retour de leurs ressortissants. Demain, il sera clair qu'on ne peut s'établir en Europe que si on y a été légalement autorisé. Rien d'exceptionnel là-dedans, simplement le retour à la règle. Nous rendons le pouvoir à nos démocraties et aux citoyens de nos pays la maîtrise de leurs frontières."
+          },
+          {
+            "lang": "fr",
+            "text": "Mais il semble que certains voudraient encore interdire ce retour à la normale. Quand la discussion a buté sur cette opposition fondamentale, nous avons assumé nos responsabilités. Et c'est à partir du texte que j'ai proposé, au nom du PPE, que nous voterons demain. Et nous sommes fiers de cela, fiers de ce résultat historique qui montre que, oui, l'Europe peut changer. Que, quand les électeurs le veulent, la politique peut et doit agir pour apporter les résultats concrets dont nos pays ont tant besoin."
+          },
+          {
+            "lang": "fr",
+            "text": "Je voudrais remercier tous les élus qui ont rendu possible ce changement. Vous remercier, Monsieur le Commissaire, Lieber Magnus, pour le travail que tu as fait au sein de la Commission. Remercier le Conseil et les gouvernements européens qui, presque tous, veulent tout mettre en œuvre pour appliquer ce nouveau règlement retour. Demain, chers collègues, c'est la seule question qui sera posée à chacun d'entre nous ici, qui veut vraiment rompre avec la faillite actuelle de l'Europe face à l'immigration illégale, cette faillite qui a causé tant de drames? Qui veut vraiment protéger l'état de droit et sortir de l'état de non-droit, qui voit nos États et nos juridictions impuissantes? Qui refuse que le droit d'asile soit détourné comme il l'est aujourd'hui partout? Qui croit que l'Europe peut être fidèle aux principes de la démocratie en répondant aujourd'hui à l'attente si forte des citoyens de nos pays? Chacun est devant ce choix."
+          }
+        ],
+        "text": "Monsieur le Président, chers collègues, nous y sommes. Demain aura lieu le vote final sur le règlement retour. C'est la fin de plusieurs décennies d'impuissance face à l'immigration illégale et de huit longues années de blocage dans la révision de la directive retour, qui disparaîtra enfin dans quelques jours. Le droit ne protégeait que celui qui avait enfreint la loi. Désormais, nous remettons la règle à l'endroit. Quand moins de 20 % des décisions de retour en Europe sont mises en œuvre aujourd'hui, 100 % pourront l'être demain. Pas dans deux ans comme certains le voulaient, demain.\n\nDemain, nos États retrouveront la possibilité d'expulser. Les délais de rétention seront augmentés sans limite pour les individus qui représentent un danger. Nos policiers et nos gendarmes auront enfin la base légale nécessaire pour lutter contre les passeurs. Un crime, un délit vaudra une interdiction d'entrée. Les recours ne serviront plus à retarder l'expulsion et les centres de retour mettront fin au chantage des régimes qui empêchent le retour de leurs ressortissants. Demain, il sera clair qu'on ne peut s'établir en Europe que si on y a été légalement autorisé. Rien d'exceptionnel là-dedans, simplement le retour à la règle. Nous rendons le pouvoir à nos démocraties et aux citoyens de nos pays la maîtrise de leurs frontières.\n\nMais il semble que certains voudraient encore interdire ce retour à la normale. Quand la discussion a buté sur cette opposition fondamentale, nous avons assumé nos responsabilités. Et c'est à partir du texte que j'ai proposé, au nom du PPE, que nous voterons demain. Et nous sommes fiers de cela, fiers de ce résultat historique qui montre que, oui, l'Europe peut changer. Que, quand les électeurs le veulent, la politique peut et doit agir pour apporter les résultats concrets dont nos pays ont tant besoin.\n\nJe voudrais remercier tous les élus qui ont rendu possible ce changement. Vous remercier, Monsieur le Commissaire, Lieber Magnus, pour le travail que tu as fait au sein de la Commission. Remercier le Conseil et les gouvernements européens qui, presque tous, veulent tout mettre en œuvre pour appliquer ce nouveau règlement retour. Demain, chers collègues, c'est la seule question qui sera posée à chacun d'entre nous ici, qui veut vraiment rompre avec la faillite actuelle de l'Europe face à l'immigration illégale, cette faillite qui a causé tant de drames? Qui veut vraiment protéger l'état de droit et sortir de l'état de non-droit, qui voit nos États et nos juridictions impuissantes? Qui refuse que le droit d'asile soit détourné comme il l'est aujourd'hui partout? Qui croit que l'Europe peut être fidèle aux principes de la démocratie en répondant aujourd'hui à l'attente si forte des citoyens de nos pays? Chacun est devant ce choix.",
+        "speaker": {
+          "person_id": "197534",
+          "in_mep_database": true,
+          "is_mep_on_date": true,
+          "first_name": "François-Xavier",
+          "last_name": "Bellamy",
+          "full_name": "François-Xavier Bellamy",
+          "gender": "MALE",
+          "nationality": {
+            "code": "FRA",
+            "name": "France"
+          },
+          "political_group": {
+            "id": "7018",
+            "label": "PPE",
+            "name": "Group of the European People's Party (Christian Democrats)"
+          },
+          "national_party": {
+            "id": "6827",
+            "label": "Les Républicains",
+            "name": "Les Républicains"
+          }
+        }
+      },
+      {
+        "id": "MTG-PL-2026-06-16-OTH-2017081987265",
+        "speech_id": "2017081987265",
+        "document_id": "CRE-10-2026-06-16-OTH-2017081987265",
+        "agenda_item_id": "CRE-10-2026-06-16-ITM-011",
+        "number": "2-0279-0000",
+        "order": 269,
+        "activity_type": "PLENARY_DEBATE_SPEECH",
+        "statement_type": "speech",
+        "participation_role": "SPEAKER",
+        "start_time": "2026-06-16T14:27:06.773+02:00",
+        "end_time": "2026-06-16T14:29:01.052+02:00",
+        "speaker_person_id": "256899",
+        "speaker_label": "Murielle Laurent, au nom du groupe S&D.",
+        "speaker_name_in_transcript": "Murielle Laurent",
+        "speaker_role_in_transcript": "au nom du groupe S&D",
+        "speaker_process_in_transcript": null,
+        "on_behalf_of_group": "S_D",
+        "original_languages": [
+          "fr"
+        ],
+        "text_source": "fr",
+        "paragraphs": [
+          {
+            "lang": "fr",
+            "text": "Monsieur le Président, Monsieur le Commissaire, chers collègues, une politique de retour n’est pas un problème en soi. Une démocratie doit mettre en œuvre ses décisions, mais elle se juge aussi à la manière dont elle les fait respecter. Aujourd’hui, nous aurions pu débattre d’un règlement rendant les retours plus efficaces tout en restant fidèle à ce qui fonde l’Union européenne: la dignité humaine. Au lieu de cela, le texte ouvre la voie à la détention des mineurs non accompagnés et de familles avec enfants; il favorise le renvoi vers des pays ne respectant pas les droits fondamentaux; il crée des hubs de retour, ces centres que l’on préfère installer loin de nos frontières pour mieux détourner le regard."
+          },
+          {
+            "lang": "fr",
+            "text": "Une politique de retour n’est pas crédible parce qu’elle est plus dure. Elle ne l’est que lorsqu’elle est efficace et conforme à l’état de droit. Quand une politique échoue ailleurs, la droite européenne décide de l’importer en Europe. Certains ici ont choisi l’affichage: ils transforment ce Parlement en caisse de résonance de leur campagne nationale. Mais les vraies questions restent sans réponse: comment renforcer la coopération avec les pays d’origine? Comment rendre les retours plus efficaces?"
+          },
+          {
+            "lang": "fr",
+            "text": "Une Europe qui renonce à ses principes ne devient pas plus forte, elle devient simplement moins européenne. L’Europe n’a pas besoin de choisir entre l’efficacité et ses valeurs. Ce règlement, lui, fait comme si ce choix était inévitable: c’est précisément là son échec."
+          }
+        ],
+        "text": "Monsieur le Président, Monsieur le Commissaire, chers collègues, une politique de retour n’est pas un problème en soi. Une démocratie doit mettre en œuvre ses décisions, mais elle se juge aussi à la manière dont elle les fait respecter. Aujourd’hui, nous aurions pu débattre d’un règlement rendant les retours plus efficaces tout en restant fidèle à ce qui fonde l’Union européenne: la dignité humaine. Au lieu de cela, le texte ouvre la voie à la détention des mineurs non accompagnés et de familles avec enfants; il favorise le renvoi vers des pays ne respectant pas les droits fondamentaux; il crée des hubs de retour, ces centres que l’on préfère installer loin de nos frontières pour mieux détourner le regard.\n\nUne politique de retour n’est pas crédible parce qu’elle est plus dure. Elle ne l’est que lorsqu’elle est efficace et conforme à l’état de droit. Quand une politique échoue ailleurs, la droite européenne décide de l’importer en Europe. Certains ici ont choisi l’affichage: ils transforment ce Parlement en caisse de résonance de leur campagne nationale. Mais les vraies questions restent sans réponse: comment renforcer la coopération avec les pays d’origine? Comment rendre les retours plus efficaces?\n\nUne Europe qui renonce à ses principes ne devient pas plus forte, elle devient simplement moins européenne. L’Europe n’a pas besoin de choisir entre l’efficacité et ses valeurs. Ce règlement, lui, fait comme si ce choix était inévitable: c’est précisément là son échec.",
+        "speaker": {
+          "person_id": "256899",
+          "in_mep_database": true,
+          "is_mep_on_date": true,
+          "first_name": "Murielle",
+          "last_name": "Laurent",
+          "full_name": "Murielle Laurent",
+          "gender": "FEMALE",
+          "nationality": {
+            "code": "FRA",
+            "name": "France"
+          },
+          "political_group": {
+            "id": "7038",
+            "label": "S&D",
+            "name": "Group of the Progressive Alliance of Socialists and Democrats in the European Parliament"
+          },
+          "national_party": {
+            "id": "6728",
+            "label": "PS",
+            "name": "PS"
+          }
+        }
+      },
+      {
+        "id": "MTG-PL-2026-06-16-OTH-2017081987267",
+        "speech_id": "2017081987267",
+        "document_id": "CRE-10-2026-06-16-OTH-2017081987267",
+        "agenda_item_id": "CRE-10-2026-06-16-ITM-011",
+        "number": "2-0280-0000",
+        "order": 270,
+        "activity_type": "PLENARY_DEBATE_SPEECH",
+        "statement_type": "speech",
+        "participation_role": "SPEAKER",
+        "start_time": "2026-06-16T14:29:10.512+02:00",
+        "end_time": "2026-06-16T14:32:00.64+02:00",
+        "speaker_person_id": "256872",
+        "speaker_label": "Fabrice Leggeri, au nom du groupe PfE.",
+        "speaker_name_in_transcript": "Fabrice Leggeri",
+        "speaker_role_in_transcript": "au nom du groupe PfE",
+        "speaker_process_in_transcript": null,
+        "on_behalf_of_group": "PFE",
+        "original_languages": [
+          "fr"
+        ],
+        "text_source": "fr",
+        "paragraphs": [
+          {
+            "lang": "fr",
+            "text": "Monsieur le Président, Monsieur le Commissaire Brunner, derrière nos débats sur l’immigration, il y a des visages. Il y a Lola, il y a Philippine, il y a les victimes de Bruxelles, de Solingen, d’Aschaffenbourg, de Munich, de Villach et de Mannheim. Partout en Europe, des familles ont vu leur vie basculer. Nous leur devons la vérité."
+          },
+          {
+            "lang": "fr",
+            "text": "Ces drames n’auraient jamais dû se produire – si nos frontières n’avaient pas été transformées en passoire, si les décisions d’éloignement avaient été exécutées, si certains responsables politiques n’avaient pas fermé les yeux pendant des années sur les conséquences de l’immigration illégale… C’est précisément pour cela que l’adoption du règlement sur le retour, demain, constituera une avancée significative."
+          },
+          {
+            "lang": "fr",
+            "text": "Depuis trop longtemps, la politique migratoire européenne reposait sur une logique absurde. Tout était fait pour empêcher les expulsions et presque rien pour les rendre effectives. La gauche, les ONG militantes et une partie de la Commission européenne, notamment sous l’impulsion de Mme Ylva Johansson, ont entretenu cette fuite en avant avec la complicité d’une droite dite modérée, qui a trop souvent accompagné ce mouvement au lieu de le combattre."
+          },
+          {
+            "lang": "fr",
+            "text": "Pendant des années, Bruxelles a davantage protégé les clandestins contre leur éloignement que les Européens contre les conséquences de l’immigration illégale. Ce texte marque enfin un changement de cap. L’allongement de la durée maximale de rétention administrative à vingt-quatre mois – alors qu’en France certains macronistes s’enorgueillissaient de l’avoir allongé de trois à sept petits mois –, le rétablissement du délit de séjour irrégulier, la fin du caractère automatiquement suspensif de nombreux recours, l’obligation pour les migrants de coopérer à leur éloignement et la création de hubs de retour hors de l’Union européenne étaient encore impensables à Bruxelles il y a quelques années."
+          },
+          {
+            "lang": "fr",
+            "text": "Après les règlements sur les pays tiers sûrs et les pays d’origine sûrs, ce vote démontre qu’une autre politique migratoire est possible, lorsque les forces du bon sens de la droite de cet hémicycle travaillent ensemble. Mais ce travail n’est pas terminé. Trop de pays refusent encore de reprendre leurs ressortissants tout en profitant des avantages accordés par l’Union – je pense notamment au régime algérien. Les visas, l’aide financière européenne et les avantages accordés par l’Union doivent désormais être conditionnés à la reprise effective de leurs ressortissants."
+          },
+          {
+            "lang": "fr",
+            "text": "Mais regardons aussi nos propres échecs: en France, 1 obligation de quitter le territoire sur 7 est exécutée."
+          },
+          {
+            "lang": "fr",
+            "text": "Certains, dans cet hémicycle, appartiennent à des partis qui gouvernent nos pays depuis des décennies et portent une responsabilité directe dans cette situation. Pendant des années, ils ont promis la fermeté et organisé l’impuissance; ils ont promis des expulsions et laissé les clandestins rentrer; ils ont promis le contrôle et laissé prospérer le désordre migratoire."
+          },
+          {
+            "lang": "fr",
+            "text": "Nos peuples ne demandent pourtant rien d’extraordinaire: ils demandent simplement que ceux qui n’ont pas le droit d’être ici repartent, que les criminels étrangers soient expulsés et que les décisions de retour deviennent enfin des retours effectifs."
+          }
+        ],
+        "text": "Monsieur le Président, Monsieur le Commissaire Brunner, derrière nos débats sur l’immigration, il y a des visages. Il y a Lola, il y a Philippine, il y a les victimes de Bruxelles, de Solingen, d’Aschaffenbourg, de Munich, de Villach et de Mannheim. Partout en Europe, des familles ont vu leur vie basculer. Nous leur devons la vérité.\n\nCes drames n’auraient jamais dû se produire – si nos frontières n’avaient pas été transformées en passoire, si les décisions d’éloignement avaient été exécutées, si certains responsables politiques n’avaient pas fermé les yeux pendant des années sur les conséquences de l’immigration illégale… C’est précisément pour cela que l’adoption du règlement sur le retour, demain, constituera une avancée significative.\n\nDepuis trop longtemps, la politique migratoire européenne reposait sur une logique absurde. Tout était fait pour empêcher les expulsions et presque rien pour les rendre effectives. La gauche, les ONG militantes et une partie de la Commission européenne, notamment sous l’impulsion de Mme Ylva Johansson, ont entretenu cette fuite en avant avec la complicité d’une droite dite modérée, qui a trop souvent accompagné ce mouvement au lieu de le combattre.\n\nPendant des années, Bruxelles a davantage protégé les clandestins contre leur éloignement que les Européens contre les conséquences de l’immigration illégale. Ce texte marque enfin un changement de cap. L’allongement de la durée maximale de rétention administrative à vingt-quatre mois – alors qu’en France certains macronistes s’enorgueillissaient de l’avoir allongé de trois à sept petits mois –, le rétablissement du délit de séjour irrégulier, la fin du caractère automatiquement suspensif de nombreux recours, l’obligation pour les migrants de coopérer à leur éloignement et la création de hubs de retour hors de l’Union européenne étaient encore impensables à Bruxelles il y a quelques années.\n\nAprès les règlements sur les pays tiers sûrs et les pays d’origine sûrs, ce vote démontre qu’une autre politique migratoire est possible, lorsque les forces du bon sens de la droite de cet hémicycle travaillent ensemble. Mais ce travail n’est pas terminé. Trop de pays refusent encore de reprendre leurs ressortissants tout en profitant des avantages accordés par l’Union – je pense notamment au régime algérien. Les visas, l’aide financière européenne et les avantages accordés par l’Union doivent désormais être conditionnés à la reprise effective de leurs ressortissants.\n\nMais regardons aussi nos propres échecs: en France, 1 obligation de quitter le territoire sur 7 est exécutée.\n\nCertains, dans cet hémicycle, appartiennent à des partis qui gouvernent nos pays depuis des décennies et portent une responsabilité directe dans cette situation. Pendant des années, ils ont promis la fermeté et organisé l’impuissance; ils ont promis des expulsions et laissé les clandestins rentrer; ils ont promis le contrôle et laissé prospérer le désordre migratoire.\n\nNos peuples ne demandent pourtant rien d’extraordinaire: ils demandent simplement que ceux qui n’ont pas le droit d’être ici repartent, que les criminels étrangers soient expulsés et que les décisions de retour deviennent enfin des retours effectifs.",
+        "speaker": {
+          "person_id": "256872",
+          "in_mep_database": true,
+          "is_mep_on_date": true,
+          "first_name": "Fabrice",
+          "last_name": "Leggeri",
+          "full_name": "Fabrice Leggeri",
+          "gender": "MALE",
+          "nationality": {
+            "code": "FRA",
+            "name": "France"
+          },
+          "political_group": {
+            "id": "7150",
+            "label": "PfE",
+            "name": "Patriots"
+          },
+          "national_party": {
+            "id": "6848",
+            "label": "RN",
+            "name": "Rassemblement"
+          }
+        }
+      },
+      {
+        "id": "MTG-PL-2026-06-16-OTH-2017081987269",
+        "speech_id": "2017081987269",
+        "document_id": "CRE-10-2026-06-16-OTH-2017081987269",
+        "agenda_item_id": "CRE-10-2026-06-16-ITM-011",
+        "number": "2-0281-0000",
+        "order": 271,
+        "activity_type": "PLENARY_DEBATE_SPEECH",
+        "statement_type": "speech",
+        "participation_role": "SPEAKER",
+        "start_time": "2026-06-16T14:32:11.271+02:00",
+        "end_time": "2026-06-16T14:33:44.648+02:00",
+        "speaker_person_id": "123562",
+        "speaker_label": "Charlie Weimers, on behalf of the ECR Group.",
+        "speaker_name_in_transcript": "Charlie Weimers",
+        "speaker_role_in_transcript": "on behalf of the ECR Group",
+        "speaker_process_in_transcript": null,
+        "on_behalf_of_group": "ECR",
+        "original_languages": [
+          "en"
+        ],
+        "text_source": "en",
+        "paragraphs": [
+          {
+            "lang": "en",
+            "text": "Mr President, colleagues, this House has only two blocks on migration: common sense pro-Europeans and the far left."
+          },
+          {
+            "lang": "en",
+            "text": "The far left never wanted a real return regulation. The far left wanted endless appeals and unused detention. The far left wanted to ban return hubs. The far left opposed unlimited entry bans for terrorists and criminals. In short, they fought to preserve a dysfunctional, paralysed system that returns almost no one."
+          },
+          {
+            "lang": "en",
+            "text": "Why does the far left fight so hard to keep criminals, rapists and Islamists roaming freely on our streets? Whether social democrat, green or communist, they are all far left on migration. And many liberals have joined them."
+          },
+          {
+            "lang": "en",
+            "text": "Yet common sense has prevailed. We delivered. It will now be possible to build big, beautiful return hubs in third countries. We can enforce unlimited entry bans, not just for serious criminals, but low-level criminals too, and detain criminals for as long as necessary."
+          },
+          {
+            "lang": "en",
+            "text": "Illegal migrants must understand: you will never make Europe your home. The era of deportations has begun."
+          }
+        ],
+        "text": "Mr President, colleagues, this House has only two blocks on migration: common sense pro-Europeans and the far left.\n\nThe far left never wanted a real return regulation. The far left wanted endless appeals and unused detention. The far left wanted to ban return hubs. The far left opposed unlimited entry bans for terrorists and criminals. In short, they fought to preserve a dysfunctional, paralysed system that returns almost no one.\n\nWhy does the far left fight so hard to keep criminals, rapists and Islamists roaming freely on our streets? Whether social democrat, green or communist, they are all far left on migration. And many liberals have joined them.\n\nYet common sense has prevailed. We delivered. It will now be possible to build big, beautiful return hubs in third countries. We can enforce unlimited entry bans, not just for serious criminals, but low-level criminals too, and detain criminals for as long as necessary.\n\nIllegal migrants must understand: you will never make Europe your home. The era of deportations has begun.",
+        "speaker": {
+          "person_id": "123562",
+          "in_mep_database": true,
+          "is_mep_on_date": true,
+          "first_name": "Charlie",
+          "last_name": "Weimers",
+          "full_name": "Charlie Weimers",
+          "gender": "MALE",
+          "nationality": {
+            "code": "SWE",
+            "name": "Sweden"
+          },
+          "political_group": {
+            "id": "7037",
+            "label": "ECR",
+            "name": "European Conservatives and Reformists"
+          },
+          "national_party": {
+            "id": "6810",
+            "label": "SD",
+            "name": "SD"
+          }
+        }
+      },
+      {
+        "id": "MTG-PL-2026-06-16-OTH-2017081987272",
+        "speech_id": "2017081987272",
+        "document_id": "CRE-10-2026-06-16-OTH-2017081987272",
+        "agenda_item_id": "CRE-10-2026-06-16-ITM-011",
+        "number": "2-0282-0000",
+        "order": 272,
+        "activity_type": "PLENARY_DEBATE_SPEECH",
+        "statement_type": "speech",
+        "participation_role": "SPEAKER",
+        "start_time": "2026-06-16T14:33:48.686+02:00",
+        "end_time": "2026-06-16T14:35:05.88+02:00",
+        "speaker_person_id": "22858",
+        "speaker_label": "Fabienne Keller, au nom du groupe Renew.",
+        "speaker_name_in_transcript": "Fabienne Keller",
+        "speaker_role_in_transcript": "au nom du groupe Renew",
+        "speaker_process_in_transcript": null,
+        "on_behalf_of_group": "RENEW",
+        "original_languages": [
+          "fr"
+        ],
+        "text_source": "fr",
+        "paragraphs": [
+          {
+            "lang": "fr",
+            "text": "Monsieur le Président, Monsieur le Commissaire – cher Magnus Brunner –, mes chers collègues, l’Europe s’est construite sur un socle de valeurs solides et une conviction partagée: le respect des droits humains. Le règlement sur le retour soumis au vote demain est contraire à ces valeurs. L’Europe ne doit pas permettre le renvoi de familles avec enfants vers des pays à l’autre bout du monde, avec lesquels elles n’ont aucun lien et sans garantie des droits humains."
+          },
+          {
+            "lang": "fr",
+            "text": "Se résoudre à approuver un tel dispositif sous la pression de l’extrême droite serait un aveu d’échec pour l’Europe et une ligne rouge franchie par ce Parlement. En 2024, nous avons abouti sur un ensemble de dix textes à la fois fermes, efficaces et respectueux des droits humains: le pacte sur la migration et l’asile. Aujourd’hui, nous prenons le risque de tout renverser. Nous prenons le risque de mettre à mal l’efficacité du pacte. Il est encore possible d’éviter cela."
+          },
+          {
+            "lang": "fr",
+            "text": "Chers collègues, soutenez l’amendement pour protéger les enfants en les excluant de ces renvois, comme la Commission nous l’avait d’ailleurs proposé initialement! L’Europe vaut mieux que cela."
+          }
+        ],
+        "text": "Monsieur le Président, Monsieur le Commissaire – cher Magnus Brunner –, mes chers collègues, l’Europe s’est construite sur un socle de valeurs solides et une conviction partagée: le respect des droits humains. Le règlement sur le retour soumis au vote demain est contraire à ces valeurs. L’Europe ne doit pas permettre le renvoi de familles avec enfants vers des pays à l’autre bout du monde, avec lesquels elles n’ont aucun lien et sans garantie des droits humains.\n\nSe résoudre à approuver un tel dispositif sous la pression de l’extrême droite serait un aveu d’échec pour l’Europe et une ligne rouge franchie par ce Parlement. En 2024, nous avons abouti sur un ensemble de dix textes à la fois fermes, efficaces et respectueux des droits humains: le pacte sur la migration et l’asile. Aujourd’hui, nous prenons le risque de tout renverser. Nous prenons le risque de mettre à mal l’efficacité du pacte. Il est encore possible d’éviter cela.\n\nChers collègues, soutenez l’amendement pour protéger les enfants en les excluant de ces renvois, comme la Commission nous l’avait d’ailleurs proposé initialement! L’Europe vaut mieux que cela.",
+        "speaker": {
+          "person_id": "22858",
+          "in_mep_database": true,
+          "is_mep_on_date": true,
+          "first_name": "Fabienne",
+          "last_name": "Keller",
+          "full_name": "Fabienne Keller",
+          "gender": "FEMALE",
+          "nationality": {
+            "code": "FRA",
+            "name": "France"
+          },
+          "political_group": {
+            "id": "7035",
+            "label": "Renew",
+            "name": "Renew Europe"
+          },
+          "national_party": {
+            "id": "6935",
+            "label": "Ren",
+            "name": "Renaissance"
+          }
+        }
+      },
+      {
+        "id": "MTG-PL-2026-06-16-OTH-2017081987274",
+        "speech_id": "2017081987274",
+        "document_id": "CRE-10-2026-06-16-OTH-2017081987274",
+        "agenda_item_id": "CRE-10-2026-06-16-ITM-011",
+        "number": "2-0283-0000",
+        "order": 273,
+        "activity_type": "PLENARY_DEBATE_SPEECH",
+        "statement_type": "speech",
+        "participation_role": "SPEAKER",
+        "start_time": "2026-06-16T14:35:11.468+02:00",
+        "end_time": "2026-06-16T14:36:25.424+02:00",
+        "speaker_person_id": "256915",
+        "speaker_label": "Mélissa Camara, au nom du groupe Verts/ALE.",
+        "speaker_name_in_transcript": "Mélissa Camara",
+        "speaker_role_in_transcript": "au nom du groupe Verts/ALE",
+        "speaker_process_in_transcript": null,
+        "on_behalf_of_group": "VERTS_ALE",
+        "original_languages": [
+          "fr"
+        ],
+        "text_source": "fr",
+        "paragraphs": [
+          {
+            "lang": "fr",
+            "text": "Monsieur le Président, mes chers collègues, nous avons été nombreux à être choqués par les violences commises par l’ICE aux États-Unis: des familles déchirées, des enfants terrorisés, une logique d’enfermement toujours plus généralisée. Eh bien demain, vos proches, les gens que vous aimez, pourraient vivre les mêmes erreurs."
+          },
+          {
+            "lang": "fr",
+            "text": "Nous voyons déjà où mènent les politiques inhumaines. «Vous, Européens, vous nous envoyez ici pour qu’on nous oublie. Car nous ne sommes pas des humains pour vous.» Ce sont les mots qu’un retenu m’a confiés lors de ma visite du centre italien en Albanie. Un endroit où les personnes sont désignées par des numéros, un centre au milieu des montagnes, loin de tout regard, où le registre des incidents fait état de tentatives de suicide chaque semaine."
+          },
+          {
+            "lang": "fr",
+            "text": "Voter ce règlement sur le retour, fruit d’une collaboration assumée entre le PPE et l’extrême droite, c’est cautionner cette déshumanisation, c’est approuver l’enfermement de familles vers des centres qui bafouent la dignité humaine, où, par votre volonté, aucun mécanisme de surveillance des droits fondamentaux ne sera créé. Sans contrôle, ces personnes seront seules face à tous les abus possibles, dans de véritables zones de non-droit."
+          },
+          {
+            "lang": "fr",
+            "text": "Mes chers collègues, soyez à la hauteur des valeurs qui fondent l’Union européenne. Défendez les droits. Défendez le droit. Votez contre ce règlement."
+          }
+        ],
+        "text": "Monsieur le Président, mes chers collègues, nous avons été nombreux à être choqués par les violences commises par l’ICE aux États-Unis: des familles déchirées, des enfants terrorisés, une logique d’enfermement toujours plus généralisée. Eh bien demain, vos proches, les gens que vous aimez, pourraient vivre les mêmes erreurs.\n\nNous voyons déjà où mènent les politiques inhumaines. «Vous, Européens, vous nous envoyez ici pour qu’on nous oublie. Car nous ne sommes pas des humains pour vous.» Ce sont les mots qu’un retenu m’a confiés lors de ma visite du centre italien en Albanie. Un endroit où les personnes sont désignées par des numéros, un centre au milieu des montagnes, loin de tout regard, où le registre des incidents fait état de tentatives de suicide chaque semaine.\n\nVoter ce règlement sur le retour, fruit d’une collaboration assumée entre le PPE et l’extrême droite, c’est cautionner cette déshumanisation, c’est approuver l’enfermement de familles vers des centres qui bafouent la dignité humaine, où, par votre volonté, aucun mécanisme de surveillance des droits fondamentaux ne sera créé. Sans contrôle, ces personnes seront seules face à tous les abus possibles, dans de véritables zones de non-droit.\n\nMes chers collègues, soyez à la hauteur des valeurs qui fondent l’Union européenne. Défendez les droits. Défendez le droit. Votez contre ce règlement.",
+        "speaker": {
+          "person_id": "256915",
+          "in_mep_database": true,
+          "is_mep_on_date": true,
+          "first_name": "Mélissa",
+          "last_name": "Camara",
+          "full_name": "Mélissa Camara",
+          "gender": "FEMALE",
+          "nationality": {
+            "code": "FRA",
+            "name": "France"
+          },
+          "political_group": {
+            "id": "7028",
+            "label": "Verts/ALE",
+            "name": "The Greens/European Free Alliance"
+          },
+          "national_party": {
+            "id": "6953",
+            "label": "Les Écologistes",
+            "name": "Les Écologistes"
+          }
+        }
+      },
+      {
+        "id": "MTG-PL-2026-06-16-OTH-2017081987276",
+        "speech_id": "2017081987276",
+        "document_id": "CRE-10-2026-06-16-OTH-2017081987276",
+        "agenda_item_id": "CRE-10-2026-06-16-ITM-011",
+        "number": "2-0284-0000",
+        "order": 274,
+        "activity_type": "PLENARY_DEBATE_SPEECH",
+        "statement_type": "speech",
+        "participation_role": "SPEAKER",
+        "start_time": "2026-06-16T14:36:32.544+02:00",
+        "end_time": "2026-06-16T14:39:02.202+02:00",
+        "speaker_person_id": "257012",
+        "speaker_label": "Estrella Galán, en nombre del Grupo The Left.",
+        "speaker_name_in_transcript": "Estrella Galán",
+        "speaker_role_in_transcript": "en nombre del Grupo The Left",
+        "speaker_process_in_transcript": null,
+        "on_behalf_of_group": "THE_LEFT",
+        "original_languages": [
+          "es"
+        ],
+        "text_source": "es",
+        "paragraphs": [
+          {
+            "lang": "es",
+            "text": "Señor presidente, señor comisario, este Parlamento está a punto de aprobar un Reglamento que permite encerrar a niñas y niños sin haber cometido ningún delito hasta treinta meses y, en algunos casos, de forma indefinida."
+          },
+          {
+            "lang": "es",
+            "text": "Lo llaman Reglamento sobre el Retorno, pero en realidad es el remate de una triple traición. La primera traición fue a los principios. El Pacto sobre Migración y Asilo nació para construir un programa de solidaridad común entre los Estados miembros, pero se ha convertido en el esqueleto perfecto sobre el que montar una maquinaria de deportaciones masivas. Chao a la solidaridad."
+          },
+          {
+            "lang": "es",
+            "text": "La segunda traición fue a los valores. Han pasado de hablar de acogida y de protección para hablar exclusivamente en este Parlamento y en la Comisión de detenciones y de expulsión. Han normalizado acuerdos con Gobiernos que no respetan los derechos humanos. Han externalizado responsabilidades y fronteras. Este Reglamento permite construir centros en terceros países fuera del territorio de la Unión que no respetan los derechos humanos, Guantánamos europeos donde deportar personas fuera de cualquier control judicial efectivo. Y están llegando al punto de sentarse con los talibanes para que formen parte de este sistema que se ha montado aquí, con los talibanes, que son terroristas. ¿Dónde quedan nuestros valores?"
+          },
+          {
+            "lang": "es",
+            "text": "La tercera traición ha sido política. La derecha europea ha decidido asumir el marco ideológico de la ultraderecha. Nadie les votó para eso, señores del Partido Popular Europeo, nadie, estoy segura. Han sido secuestrados ideológicamente por la extrema derecha y este Reglamento es el resultado: un ICE europeo para identificar, para detener y para expulsar al estilo de Trump. Ya no es la extrema derecha la que se adapta a Europa, ahora es Europa la que se está adaptando a los ultras."
+          },
+          {
+            "lang": "es",
+            "text": "Lo que vamos a votar no es un Reglamento inocente. No lo es. Es un balance sobre qué queda del proyecto europeo. Porque Europa no nació para levantar una maquinaria de expulsión, ni para distinguir entre qué personas merecen derechos y cuáles pueden ser desechadas. Numerosas instituciones, incluida la ONU, han cuestionado esta norma y, por eso, lo decimos alto y claro: no vamos a parar hasta derogar este Reglamento que es cruel."
+          }
+        ],
+        "text": "Señor presidente, señor comisario, este Parlamento está a punto de aprobar un Reglamento que permite encerrar a niñas y niños sin haber cometido ningún delito hasta treinta meses y, en algunos casos, de forma indefinida.\n\nLo llaman Reglamento sobre el Retorno, pero en realidad es el remate de una triple traición. La primera traición fue a los principios. El Pacto sobre Migración y Asilo nació para construir un programa de solidaridad común entre los Estados miembros, pero se ha convertido en el esqueleto perfecto sobre el que montar una maquinaria de deportaciones masivas. Chao a la solidaridad.\n\nLa segunda traición fue a los valores. Han pasado de hablar de acogida y de protección para hablar exclusivamente en este Parlamento y en la Comisión de detenciones y de expulsión. Han normalizado acuerdos con Gobiernos que no respetan los derechos humanos. Han externalizado responsabilidades y fronteras. Este Reglamento permite construir centros en terceros países fuera del territorio de la Unión que no respetan los derechos humanos, Guantánamos europeos donde deportar personas fuera de cualquier control judicial efectivo. Y están llegando al punto de sentarse con los talibanes para que formen parte de este sistema que se ha montado aquí, con los talibanes, que son terroristas. ¿Dónde quedan nuestros valores?\n\nLa tercera traición ha sido política. La derecha europea ha decidido asumir el marco ideológico de la ultraderecha. Nadie les votó para eso, señores del Partido Popular Europeo, nadie, estoy segura. Han sido secuestrados ideológicamente por la extrema derecha y este Reglamento es el resultado: un ICE europeo para identificar, para detener y para expulsar al estilo de Trump. Ya no es la extrema derecha la que se adapta a Europa, ahora es Europa la que se está adaptando a los ultras.\n\nLo que vamos a votar no es un Reglamento inocente. No lo es. Es un balance sobre qué queda del proyecto europeo. Porque Europa no nació para levantar una maquinaria de expulsión, ni para distinguir entre qué personas merecen derechos y cuáles pueden ser desechadas. Numerosas instituciones, incluida la ONU, han cuestionado esta norma y, por eso, lo decimos alto y claro: no vamos a parar hasta derogar este Reglamento que es cruel.",
+        "speaker": {
+          "person_id": "257012",
+          "in_mep_database": true,
+          "is_mep_on_date": true,
+          "first_name": "Estrella",
+          "last_name": "Galán",
+          "full_name": "Estrella Galán",
+          "gender": "FEMALE",
+          "nationality": {
+            "code": "ESP",
+            "name": "Spain"
+          },
+          "political_group": {
+            "id": "7036",
+            "label": "The Left",
+            "name": "The Left - GUE/NGL"
+          },
+          "national_party": {
+            "id": "6949",
+            "label": "SMR",
+            "name": "SMR"
+          }
+        }
+      },
+      {
+        "id": "MTG-PL-2026-06-16-OTH-2017081987278",
+        "speech_id": "2017081987278",
+        "document_id": "CRE-10-2026-06-16-OTH-2017081987278",
+        "agenda_item_id": "CRE-10-2026-06-16-ITM-011",
+        "number": "2-0285-0000",
+        "order": 275,
+        "activity_type": "PLENARY_DEBATE_SPEECH",
+        "statement_type": "speech",
+        "participation_role": "SPEAKER",
+        "start_time": "2026-06-16T14:39:10.154+02:00",
+        "end_time": "2026-06-16T14:40:24.775+02:00",
+        "speaker_person_id": "256957",
+        "speaker_label": "Mary Khan, im Namen der ESN-Fraktion.",
+        "speaker_name_in_transcript": "Mary Khan",
+        "speaker_role_in_transcript": "im Namen der ESN-Fraktion",
+        "speaker_process_in_transcript": null,
+        "on_behalf_of_group": "ESN",
+        "original_languages": [
+          "de"
+        ],
+        "text_source": "de",
+        "paragraphs": [
+          {
+            "lang": "de",
+            "text": "Herr Präsident! Elf Jahre mussten vergehen, bevor man in diesem EU-Elfenbeinturm endlich begonnen hat, die Folgen der unkontrollierten Massenmigration ernst zu nehmen. Elf Jahre auch, in denen Eltern ihre Kinder verloren haben; elf Jahre, in denen Frauen Opfer von Tätern wurden, die niemals hätten hier sein dürfen. Diese Jahre werden in die Geschichte eingehen, und die Verantwortlichen haben sich damit selbst in Stein gemeißelt."
+          },
+          {
+            "lang": "de",
+            "text": "Diese Rückführungsverordnung markiert den Wendepunkt, den ersten Schritt in die richtige Richtung. Nach der morgigen Abstimmung kann auch Deutschland bereits in diesem Sommer potenzielle Abkommenspartner suchen, Rückführungszentren vorbereiten und endlich Druck auf Drittstaaten ausüben, die ihre illegalen Migranten nicht zurücknehmen wollen – über Entwicklungshilfe, Visa und Handelspolitik."
+          },
+          {
+            "lang": "de",
+            "text": "Und wir als AfD werden ganz genau schauen, ob Friedrich Merz das umsetzt und endlich mal sein Wort hält. Der morgige Tag zeigt auch, was für uns Bürger Gutes entstehen kann, wenn man endlich seine parteipolitische Feigheit ablegt."
+          }
+        ],
+        "text": "Herr Präsident! Elf Jahre mussten vergehen, bevor man in diesem EU-Elfenbeinturm endlich begonnen hat, die Folgen der unkontrollierten Massenmigration ernst zu nehmen. Elf Jahre auch, in denen Eltern ihre Kinder verloren haben; elf Jahre, in denen Frauen Opfer von Tätern wurden, die niemals hätten hier sein dürfen. Diese Jahre werden in die Geschichte eingehen, und die Verantwortlichen haben sich damit selbst in Stein gemeißelt.\n\nDiese Rückführungsverordnung markiert den Wendepunkt, den ersten Schritt in die richtige Richtung. Nach der morgigen Abstimmung kann auch Deutschland bereits in diesem Sommer potenzielle Abkommenspartner suchen, Rückführungszentren vorbereiten und endlich Druck auf Drittstaaten ausüben, die ihre illegalen Migranten nicht zurücknehmen wollen – über Entwicklungshilfe, Visa und Handelspolitik.\n\nUnd wir als AfD werden ganz genau schauen, ob Friedrich Merz das umsetzt und endlich mal sein Wort hält. Der morgige Tag zeigt auch, was für uns Bürger Gutes entstehen kann, wenn man endlich seine parteipolitische Feigheit ablegt.",
+        "speaker": {
+          "person_id": "256957",
+          "in_mep_database": true,
+          "is_mep_on_date": true,
+          "first_name": "Mary",
+          "last_name": "Khan",
+          "full_name": "Mary Khan",
+          "gender": "FEMALE",
+          "nationality": {
+            "code": "DEU",
+            "name": "Germany"
+          },
+          "political_group": {
+            "id": "7151",
+            "label": "ESN",
+            "name": "Sovereignists"
+          },
+          "national_party": {
+            "id": "6802",
+            "label": "AfD",
+            "name": "AfD"
+          }
+        }
+      },
+      {
+        "id": "MTG-PL-2026-06-16-OTH-2017081987280",
+        "speech_id": "2017081987280",
+        "document_id": "CRE-10-2026-06-16-OTH-2017081987280",
+        "agenda_item_id": "CRE-10-2026-06-16-ITM-011",
+        "number": "2-0286-0000",
+        "order": 276,
+        "activity_type": "PLENARY_DEBATE_SPEECH",
+        "statement_type": "speech",
+        "participation_role": "SPEAKER",
+        "start_time": "2026-06-16T14:40:35.442+02:00",
+        "end_time": "2026-06-16T14:42:21.748+02:00",
+        "speaker_person_id": "263974",
+        "speaker_label": "Magnus Brunner, Member of the Commission.",
+        "speaker_name_in_transcript": "Magnus Brunner",
+        "speaker_role_in_transcript": "Member of the Commission",
+        "speaker_process_in_transcript": null,
+        "on_behalf_of_group": null,
+        "original_languages": [
+          "en"
+        ],
+        "text_source": "en",
+        "paragraphs": [
+          {
+            "lang": "en",
+            "text": "Mr President, honourable Members, first of all, thanks very much for the debate."
+          },
+          {
+            "lang": "en",
+            "text": "To make that clear, it has nothing to do with politically being left or right. It has to do with pragmatism, and it is clear that for our migration and asylum systems to work, we need fast returns, effective returns of irregular migrants."
+          },
+          {
+            "lang": "en",
+            "text": "The new return regulation, in my view, does exactly this and gives us control over who can stay in the European Union and who needs to leave the European Union, while, of course, respecting human rights, people's rights, international law, of course – that is also in the regulation."
+          },
+          {
+            "lang": "en",
+            "text": "This is, I think, what the citizens in Europe expect, and this is what we are delivering. I think it's a really important part of the new chapter I was talking about and the new chapter we were working on."
+          },
+          {
+            "lang": "en",
+            "text": "Also, third countries have to play a role, of course. They also have an obligation to re-admit their citizens. And that's why we want to focus on the external dimension more in the next months. We should definitely use all our leverage that we have as a European Union, be it visa, be it trade, be it also financial tools, for example. And we should also develop new ones, definitely."
+          },
+          {
+            "lang": "en",
+            "text": "I think all together we should keep this momentum. There is no time to waste. So as soon as the regulation will be adopted, I will start working very closely with the Member States to apply the new rules."
+          },
+          {
+            "lang": "en",
+            "text": "So thank you very much for the debate again and all the best."
+          }
+        ],
+        "text": "Mr President, honourable Members, first of all, thanks very much for the debate.\n\nTo make that clear, it has nothing to do with politically being left or right. It has to do with pragmatism, and it is clear that for our migration and asylum systems to work, we need fast returns, effective returns of irregular migrants.\n\nThe new return regulation, in my view, does exactly this and gives us control over who can stay in the European Union and who needs to leave the European Union, while, of course, respecting human rights, people's rights, international law, of course – that is also in the regulation.\n\nThis is, I think, what the citizens in Europe expect, and this is what we are delivering. I think it's a really important part of the new chapter I was talking about and the new chapter we were working on.\n\nAlso, third countries have to play a role, of course. They also have an obligation to re-admit their citizens. And that's why we want to focus on the external dimension more in the next months. We should definitely use all our leverage that we have as a European Union, be it visa, be it trade, be it also financial tools, for example. And we should also develop new ones, definitely.\n\nI think all together we should keep this momentum. There is no time to waste. So as soon as the regulation will be adopted, I will start working very closely with the Member States to apply the new rules.\n\nSo thank you very much for the debate again and all the best.",
+        "speaker": {
+          "person_id": "263974",
+          "in_mep_database": false,
+          "is_mep_on_date": false,
+          "first_name": null,
+          "last_name": null,
+          "full_name": "Magnus Brunner",
+          "nationality": null,
+          "political_group": null,
+          "national_party": null
+        }
+      },
+      {
+        "id": "MTG-PL-2026-06-16-OTH-2017081987282",
+        "speech_id": "2017081987282",
+        "document_id": "CRE-10-2026-06-16-OTH-2017081987282",
+        "agenda_item_id": "CRE-10-2026-06-16-ITM-011",
+        "number": "2-0287-0000",
+        "order": 277,
+        "activity_type": "PLENARY_DEBATE_SPEECH",
+        "statement_type": "speech",
+        "participation_role": "SPEAKER",
+        "start_time": "2026-06-16T14:42:27.305+02:00",
+        "end_time": "2026-06-16T14:44:26.327+02:00",
+        "speaker_person_id": "197781",
+        "speaker_label": "Malik Azmani, rapporteur.",
+        "speaker_name_in_transcript": "Malik Azmani",
+        "speaker_role_in_transcript": "rapporteur",
+        "speaker_process_in_transcript": null,
+        "on_behalf_of_group": null,
+        "original_languages": [
+          "en"
+        ],
+        "text_source": "en",
+        "paragraphs": [
+          {
+            "lang": "en",
+            "text": "Mr President, thank you also to all colleagues for their contributions to this debate."
+          },
+          {
+            "lang": "en",
+            "text": "As expected, we have heard different views across the Parliament today, which I think it's also healthy in a democratic parliament, especially on a file as sensitive and important as return policy."
+          },
+          {
+            "lang": "en",
+            "text": "To colleagues who have expressed concerns regarding fundamental rights, let me be very clear: effective returns and the protection of fundamental rights can go hand in hand. Throughout these negotiations, Parliament worked hard to ensure that this regulation remains fully anchored in the rule of law and our European values."
+          },
+          {
+            "lang": "en",
+            "text": "But a migration system in which return decisions are issued but not implemented is neither fair nor credible. It's unfair to those who genuinely need protection, it's unfair to Member States carrying the burden, and it's really unfair to our citizens who expect European rules to be enforced. We should also be honest that no return system can function without effective cooperation with third countries. This is about shared responsibility and ensuring that migration management works in practice."
+          },
+          {
+            "lang": "en",
+            "text": "And as rapporteur, I firmly believe that the text before us reflects the right balance between effectiveness, legal certainty and fundamental rights. It's the result of months of difficult negotiating and carefully crafted compromises. Legislation is all about finding common ground and delivering workable solutions for Europe. And that has always been my motivation, ever since I worked on migration in the national parliament, and when I came to Brussels in 2019."
+          },
+          {
+            "lang": "en",
+            "text": "I therefore once again invite colleagues to support this regulation tomorrow."
+          }
+        ],
+        "text": "Mr President, thank you also to all colleagues for their contributions to this debate.\n\nAs expected, we have heard different views across the Parliament today, which I think it's also healthy in a democratic parliament, especially on a file as sensitive and important as return policy.\n\nTo colleagues who have expressed concerns regarding fundamental rights, let me be very clear: effective returns and the protection of fundamental rights can go hand in hand. Throughout these negotiations, Parliament worked hard to ensure that this regulation remains fully anchored in the rule of law and our European values.\n\nBut a migration system in which return decisions are issued but not implemented is neither fair nor credible. It's unfair to those who genuinely need protection, it's unfair to Member States carrying the burden, and it's really unfair to our citizens who expect European rules to be enforced. We should also be honest that no return system can function without effective cooperation with third countries. This is about shared responsibility and ensuring that migration management works in practice.\n\nAnd as rapporteur, I firmly believe that the text before us reflects the right balance between effectiveness, legal certainty and fundamental rights. It's the result of months of difficult negotiating and carefully crafted compromises. Legislation is all about finding common ground and delivering workable solutions for Europe. And that has always been my motivation, ever since I worked on migration in the national parliament, and when I came to Brussels in 2019.\n\nI therefore once again invite colleagues to support this regulation tomorrow.",
+        "speaker": {
+          "person_id": "197781",
+          "in_mep_database": true,
+          "is_mep_on_date": true,
+          "first_name": "Malik",
+          "last_name": "Azmani",
+          "full_name": "Malik Azmani",
+          "gender": "MALE",
+          "nationality": {
+            "code": "NLD",
+            "name": "Netherlands"
+          },
+          "political_group": {
+            "id": "7035",
+            "label": "Renew",
+            "name": "Renew Europe"
+          },
+          "national_party": {
+            "id": "6691",
+            "label": "VVD",
+            "name": "VVD"
+          }
+        }
+      },
+      {
+        "id": "MTG-PL-2026-06-16-OTH-2017081987283",
+        "speech_id": "2017081987283",
+        "document_id": "CRE-10-2026-06-16-OTH-2017081987283",
+        "agenda_item_id": "CRE-10-2026-06-16-ITM-011",
+        "number": "2-0288-0000",
+        "order": 278,
+        "activity_type": "PLENARY_DEBATE_SPEECH",
+        "statement_type": "speech",
+        "participation_role": "SPEAKER",
+        "start_time": "2026-06-16T14:44:26.327+02:00",
+        "end_time": "2026-06-16T14:44:43.796+02:00",
+        "speaker_person_id": "125042",
+        "speaker_label": "President.",
+        "speaker_name_in_transcript": "President",
+        "speaker_role_in_transcript": null,
+        "speaker_process_in_transcript": null,
+        "on_behalf_of_group": null,
+        "original_languages": [
+          "en"
+        ],
+        "text_source": "en",
+        "paragraphs": [
+          {
+            "lang": "en",
+            "text": "The debate is closed. The vote will be held tomorrow."
+          }
+        ],
+        "text": "The debate is closed. The vote will be held tomorrow.",
+        "speaker": {
+          "person_id": "125042",
+          "in_mep_database": true,
+          "is_mep_on_date": true,
+          "first_name": "Javi",
+          "last_name": "López",
+          "full_name": "Javi López",
+          "gender": "MALE",
+          "nationality": {
+            "code": "ESP",
+            "name": "Spain"
+          },
+          "political_group": {
+            "id": "7038",
+            "label": "S&D",
+            "name": "Group of the Progressive Alliance of Socialists and Democrats in the European Parliament"
+          },
+          "national_party": {
+            "id": "6816",
+            "label": "PSC-PSOE",
+            "name": "Partit dels Socialistes de Catalunya (PSC-PSOE)"
+          }
+        }
+      },
+      {
+        "id": "MTG-PL-2026-06-16-OTH-2017083047158",
+        "speech_id": "2017083047158",
+        "document_id": "CRE-10-2026-06-16-OTH-2017083047158",
+        "agenda_item_id": "CRE-10-2026-06-16-ITM-011",
+        "number": "2-0288-0000",
+        "order": 279,
+        "activity_type": "PROCEEDING_ACTIVITY",
+        "statement_type": "writtenStatements",
+        "participation_role": null,
+        "start_time": null,
+        "end_time": null,
+        "speaker_person_id": null,
+        "speaker_label": null,
+        "speaker_name_in_transcript": null,
+        "speaker_role_in_transcript": null,
+        "speaker_process_in_transcript": null,
+        "on_behalf_of_group": null,
+        "original_languages": [
+          "en"
+        ],
+        "text_source": "en",
+        "paragraphs": [
+          {
+            "lang": "en",
+            "text": "Written Statements (Rule 178)"
+          }
+        ],
+        "text": "Written Statements (Rule 178)",
+        "speaker": null
+      },
+      {
+        "id": "MTG-PL-2026-06-16-OTH-2017083047159",
+        "speech_id": "2017083047159",
+        "document_id": "CRE-10-2026-06-16-OTH-2017083047159",
+        "agenda_item_id": "CRE-10-2026-06-16-ITM-011",
+        "number": "2-0288-5000",
+        "order": 280,
+        "activity_type": "PLENARY_DEBATE_WRITTEN_STATEMENT",
+        "statement_type": "writtenStatements",
+        "participation_role": "SPEAKER",
+        "start_time": null,
+        "end_time": null,
+        "speaker_person_id": "256852",
+        "speaker_label": "Nikola Bartůšek (NI), in writing.",
+        "speaker_name_in_transcript": "Nikola Bartůšek",
+        "speaker_role_in_transcript": null,
+        "speaker_process_in_transcript": "in writing",
+        "on_behalf_of_group": null,
+        "original_languages": [
+          "en"
+        ],
+        "text_source": "en",
+        "paragraphs": [
+          {
+            "lang": "en",
+            "text": "For a safer and more secure Europe, a functioning asylum and migration system is a must.Every year, hundreds of thousands of people receive a final decision stating that they have no legal right to remain in the European Union. Yet a large proportion never leave. This is not only a failure of enforcement, it is a failure to protect our citizens.For too long, Europe has sent the wrong message, that even after a final negative decision, it is often possible to stay indefinitely.Illegally.That situation has fuelled illegal migration, encouraged abuse of the system, and undermined public confidence in our ability to control our borders.This regulation is a necessary correction.Let us be clear. A sovereign Europe must be able to decide who has the right to stay on its territory and who does not.Respect for fundamental rights and respect for the rule of law are not opposites. They go hand in hand.Our citizens expect us to protect Europe's borders, uphold our laws, and ensure that migration is managed, not ignored. It is time to deliver."
+          }
+        ],
+        "text": "For a safer and more secure Europe, a functioning asylum and migration system is a must.Every year, hundreds of thousands of people receive a final decision stating that they have no legal right to remain in the European Union. Yet a large proportion never leave. This is not only a failure of enforcement, it is a failure to protect our citizens.For too long, Europe has sent the wrong message, that even after a final negative decision, it is often possible to stay indefinitely.Illegally.That situation has fuelled illegal migration, encouraged abuse of the system, and undermined public confidence in our ability to control our borders.This regulation is a necessary correction.Let us be clear. A sovereign Europe must be able to decide who has the right to stay on its territory and who does not.Respect for fundamental rights and respect for the rule of law are not opposites. They go hand in hand.Our citizens expect us to protect Europe's borders, uphold our laws, and ensure that migration is managed, not ignored. It is time to deliver.",
+        "speaker": {
+          "person_id": "256852",
+          "in_mep_database": true,
+          "is_mep_on_date": true,
+          "first_name": "Nikola",
+          "last_name": "Bartůšek",
+          "full_name": "Nikola Bartůšek",
+          "gender": "FEMALE",
+          "nationality": {
+            "code": "CZE",
+            "name": "Czechia"
+          },
+          "political_group": {
+            "id": "6561",
+            "label": "NI",
+            "name": "Non-attached Members"
+          },
+          "national_party": {
+            "id": "6843",
+            "label": "Ind.",
+            "name": "Ind."
+          }
+        }
+      },
+      {
+        "id": "MTG-PL-2026-06-16-OTH-2017084930529",
+        "speech_id": "2017084930529",
+        "document_id": "CRE-10-2026-06-16-OTH-2017084930529",
+        "agenda_item_id": "CRE-10-2026-06-16-ITM-011",
+        "number": "2-0288-5625",
+        "order": 281,
+        "activity_type": "PLENARY_DEBATE_WRITTEN_STATEMENT",
+        "statement_type": "writtenStatements",
+        "participation_role": "SPEAKER",
+        "start_time": null,
+        "end_time": null,
+        "speaker_person_id": "197501",
+        "speaker_label": "Joachim Stanisław Brudziński (ECR), na piśmie.",
+        "speaker_name_in_transcript": "Joachim Stanisław Brudziński",
+        "speaker_role_in_transcript": null,
+        "speaker_process_in_transcript": "na piśmie",
+        "on_behalf_of_group": null,
+        "original_languages": [
+          "pl"
+        ],
+        "text_source": "pl",
+        "paragraphs": [
+          {
+            "lang": "pl",
+            "text": "Rozporządzenie powrotowe, czyli wspólny system powrotów obywateli państw trzecich nielegalnie przebywających w Unii – to temat dzisiejszej debaty, bardzo potrzebnej i to od dawna. Trudno dłużej udawać, że dotychczasowy system działa, trudno bez końca tuszować to co się dzieje na ulicach wielu miast Europy – gdzie po prostu giną ludzie – trudno zamiatać pod dywan narastające problemy które prowokują nielegalni migranci. I dlatego jest dzisiaj ta debata. Dlatego głosowanie na ten temat ma wysłać jasny sygnał: trzeba nazywać rzeczy po imieniu, trzeba uruchomić system powrotów nielegalnych – podkreślam nielegalnych migrantów do ich macierzystych państw. Do tej pory głównie udawano, że ten system działa, że można - zgodnie z prawem zresztą – odsyłać nielegalnych migrantów skąd przybyli. Ale wiemy jak ten system funkcjonował i funkcjonuje – jak by go nie w ogóle nie było. Gdyby działał, to nie było by dzisiaj tej debaty. Każde państwo musi mieć prawo do kontroli własnych granic. Nie ma mowy o przymusowych relokacjach w obszarze Unii. Agencja Frontex musi odzyskać prawo do tego, do czego została powołana: do ochrony naszych granic zewnętrznych. Trzeba skończyć z bezprawiem, a Ci którzy nielegalnie dostali się na teren Unii muszą mieć świadomość, że ich też obowiązuje prawo."
+          }
+        ],
+        "text": "Rozporządzenie powrotowe, czyli wspólny system powrotów obywateli państw trzecich nielegalnie przebywających w Unii – to temat dzisiejszej debaty, bardzo potrzebnej i to od dawna. Trudno dłużej udawać, że dotychczasowy system działa, trudno bez końca tuszować to co się dzieje na ulicach wielu miast Europy – gdzie po prostu giną ludzie – trudno zamiatać pod dywan narastające problemy które prowokują nielegalni migranci. I dlatego jest dzisiaj ta debata. Dlatego głosowanie na ten temat ma wysłać jasny sygnał: trzeba nazywać rzeczy po imieniu, trzeba uruchomić system powrotów nielegalnych – podkreślam nielegalnych migrantów do ich macierzystych państw. Do tej pory głównie udawano, że ten system działa, że można - zgodnie z prawem zresztą – odsyłać nielegalnych migrantów skąd przybyli. Ale wiemy jak ten system funkcjonował i funkcjonuje – jak by go nie w ogóle nie było. Gdyby działał, to nie było by dzisiaj tej debaty. Każde państwo musi mieć prawo do kontroli własnych granic. Nie ma mowy o przymusowych relokacjach w obszarze Unii. Agencja Frontex musi odzyskać prawo do tego, do czego została powołana: do ochrony naszych granic zewnętrznych. Trzeba skończyć z bezprawiem, a Ci którzy nielegalnie dostali się na teren Unii muszą mieć świadomość, że ich też obowiązuje prawo.",
+        "speaker": {
+          "person_id": "197501",
+          "in_mep_database": true,
+          "is_mep_on_date": true,
+          "first_name": "Joachim Stanisław",
+          "last_name": "Brudziński",
+          "full_name": "Joachim Stanisław Brudziński",
+          "gender": "MALE",
+          "nationality": {
+            "code": "POL",
+            "name": "Poland"
+          },
+          "political_group": {
+            "id": "7037",
+            "label": "ECR",
+            "name": "European Conservatives and Reformists"
+          },
+          "national_party": {
+            "id": "6702",
+            "label": "PiS",
+            "name": "PiS"
+          }
+        }
+      },
+      {
+        "id": "MTG-PL-2026-06-16-OTH-2017083751414",
+        "speech_id": "2017083751414",
+        "document_id": "CRE-10-2026-06-16-OTH-2017083751414",
+        "agenda_item_id": "CRE-10-2026-06-16-ITM-011",
+        "number": "2-0288-6250",
+        "order": 282,
+        "activity_type": "PLENARY_DEBATE_WRITTEN_STATEMENT",
+        "statement_type": "writtenStatements",
+        "participation_role": "SPEAKER",
+        "start_time": null,
+        "end_time": null,
+        "speaker_person_id": "257056",
+        "speaker_label": "Mariusz Kamiński (ECR), na piśmie.",
+        "speaker_name_in_transcript": "Mariusz Kamiński",
+        "speaker_role_in_transcript": null,
+        "speaker_process_in_transcript": "na piśmie",
+        "on_behalf_of_group": null,
+        "original_languages": [
+          "pl"
+        ],
+        "text_source": "pl",
+        "paragraphs": [
+          {
+            "lang": "pl",
+            "text": "Dzisiaj, po latach błędów i szkodliwych decyzji, zwyciężył zdrowy rozsądek. To krok w stronę normalności, w kierunku zerwania ze zbankrutowaną europejską polityką migracyjną, powrotu do zasad, które dla mojego obozu politycznego i dla zdecydowanej większości Polaków od zawsze były oczywiste.W czasie, gdy Bruksela i Berlin forsowały kolejne rozwiązania osłabiające kontrolę nad migracją, my konsekwentnie powtarzaliśmy, że państwo musi kontrolować własne granice. To państwo, a nie przemytnicy ludzi, nie brukselscy urzędnicy, musi decydować o tym, kto może przekroczyć jego granice, kto może pozostać na jego terytorium, a kto powinien je opuścić.Przez lata unijne elity budowały dysfunkcyjny system oparty na absurdalnej logice „Herzlich Willkommen” i „Wir schaffen das”. System, który wpuścił do Europy miliony migrantów, a w którym wykonywana jest zaledwie co czwarta decyzja powrotowa.Przez dekady niewyobrażalne było skuteczne wydalanie nielegalnych migrantów. Niewyobrażalne było, by przestępstwo skutkowało zakazem ponownego wjazdu. Niewyobrażalne było rozbijanie siatek przemytników ludzi, przełamanie szantażu państw odmawiających przyjmowania własnych obywateli czy tworzenie centrów powrotowych poza granicami Unii Europejskiej.Dzisiejsze głosowanie nie rozwiązuje wszystkich problemów. Nie naprawia całego szkodliwego systemu, który przez lata nagradzał nielegalną migrację, a karał państwa próbujące chronić własne granice. Potrzebne są kolejne działania. Potrzebujemy odrzucenia mechanizmu relokacji i przymusowej solidarności."
+          }
+        ],
+        "text": "Dzisiaj, po latach błędów i szkodliwych decyzji, zwyciężył zdrowy rozsądek. To krok w stronę normalności, w kierunku zerwania ze zbankrutowaną europejską polityką migracyjną, powrotu do zasad, które dla mojego obozu politycznego i dla zdecydowanej większości Polaków od zawsze były oczywiste.W czasie, gdy Bruksela i Berlin forsowały kolejne rozwiązania osłabiające kontrolę nad migracją, my konsekwentnie powtarzaliśmy, że państwo musi kontrolować własne granice. To państwo, a nie przemytnicy ludzi, nie brukselscy urzędnicy, musi decydować o tym, kto może przekroczyć jego granice, kto może pozostać na jego terytorium, a kto powinien je opuścić.Przez lata unijne elity budowały dysfunkcyjny system oparty na absurdalnej logice „Herzlich Willkommen” i „Wir schaffen das”. System, który wpuścił do Europy miliony migrantów, a w którym wykonywana jest zaledwie co czwarta decyzja powrotowa.Przez dekady niewyobrażalne było skuteczne wydalanie nielegalnych migrantów. Niewyobrażalne było, by przestępstwo skutkowało zakazem ponownego wjazdu. Niewyobrażalne było rozbijanie siatek przemytników ludzi, przełamanie szantażu państw odmawiających przyjmowania własnych obywateli czy tworzenie centrów powrotowych poza granicami Unii Europejskiej.Dzisiejsze głosowanie nie rozwiązuje wszystkich problemów. Nie naprawia całego szkodliwego systemu, który przez lata nagradzał nielegalną migrację, a karał państwa próbujące chronić własne granice. Potrzebne są kolejne działania. Potrzebujemy odrzucenia mechanizmu relokacji i przymusowej solidarności.",
+        "speaker": {
+          "person_id": "257056",
+          "in_mep_database": true,
+          "is_mep_on_date": true,
+          "first_name": "Mariusz",
+          "last_name": "Kamiński",
+          "full_name": "Mariusz Kamiński",
+          "gender": "MALE",
+          "nationality": {
+            "code": "POL",
+            "name": "Poland"
+          },
+          "political_group": {
+            "id": "7037",
+            "label": "ECR",
+            "name": "European Conservatives and Reformists"
+          },
+          "national_party": {
+            "id": "6702",
+            "label": "PiS",
+            "name": "PiS"
+          }
+        }
+      },
+      {
+        "id": "MTG-PL-2026-06-16-OTH-2017083047160",
+        "speech_id": "2017083047160",
+        "document_id": "CRE-10-2026-06-16-OTH-2017083047160",
+        "agenda_item_id": "CRE-10-2026-06-16-ITM-011",
+        "number": "2-0288-7500",
+        "order": 283,
+        "activity_type": "PLENARY_DEBATE_WRITTEN_STATEMENT",
+        "statement_type": "writtenStatements",
+        "participation_role": "SPEAKER",
+        "start_time": null,
+        "end_time": null,
+        "speaker_person_id": "198084",
+        "speaker_label": "Katri Kulmuni (Renew), kirjallinen.",
+        "speaker_name_in_transcript": "Katri Kulmuni",
+        "speaker_role_in_transcript": null,
+        "speaker_process_in_transcript": "kirjallinen",
+        "on_behalf_of_group": null,
+        "original_languages": [
+          "fi"
+        ],
+        "text_source": "fi",
+        "paragraphs": [
+          {
+            "lang": "fi",
+            "text": "Esitys yhteisen järjestelmän perustamisesta unionissa laittomasti olevien kolmansien maiden kansalaisten palauttamiseksi ei ole kaikilta osin ongelmaton, mutta sen tavoitteet ovat kuitenkin tarpeellisia. Perusongelma tämän kysymyksen kohdalla on se, että turvapaikkajärjestelmää on jo pitkään käytetty siirtolaisuuden väylänä Eurooppaan. Tämä ei ole järjestelmän tarkoitus eikä järjestelmä nykyisellään sellaista kestä, vaan lailliselle ja lähinnä työperäiselle maahanmuutolle on omat kanavansa.Käytännössä esitys helpottaisi laittomasti EU:n alueella olevien henkilöiden palauttamista, kun yhden jäsenmaan tekemä palautuspäätös tunnustettaisiin toisissakin maissa. Esitys mahdollistaa myös EU:n ulkopuolella olevien palautuskeskusten perustamisen. Turvapaikkapolitiikka on silti ensi sijassa jokaisen jäsenmaan omassa päätösvallassa. On myös hyvä muistaa, että jokainen tapaus on tietysti yksilöllinen, ja on pyrittävä ratkaisuihin, joissa erityisesti pienten lasten ja muiden hauraimmassa asemassa olevien ihmisten oikeudet turvataan käytännön tilanteissa."
+          }
+        ],
+        "text": "Esitys yhteisen järjestelmän perustamisesta unionissa laittomasti olevien kolmansien maiden kansalaisten palauttamiseksi ei ole kaikilta osin ongelmaton, mutta sen tavoitteet ovat kuitenkin tarpeellisia. Perusongelma tämän kysymyksen kohdalla on se, että turvapaikkajärjestelmää on jo pitkään käytetty siirtolaisuuden väylänä Eurooppaan. Tämä ei ole järjestelmän tarkoitus eikä järjestelmä nykyisellään sellaista kestä, vaan lailliselle ja lähinnä työperäiselle maahanmuutolle on omat kanavansa.Käytännössä esitys helpottaisi laittomasti EU:n alueella olevien henkilöiden palauttamista, kun yhden jäsenmaan tekemä palautuspäätös tunnustettaisiin toisissakin maissa. Esitys mahdollistaa myös EU:n ulkopuolella olevien palautuskeskusten perustamisen. Turvapaikkapolitiikka on silti ensi sijassa jokaisen jäsenmaan omassa päätösvallassa. On myös hyvä muistaa, että jokainen tapaus on tietysti yksilöllinen, ja on pyrittävä ratkaisuihin, joissa erityisesti pienten lasten ja muiden hauraimmassa asemassa olevien ihmisten oikeudet turvataan käytännön tilanteissa.",
+        "speaker": {
+          "person_id": "198084",
+          "in_mep_database": true,
+          "is_mep_on_date": true,
+          "first_name": "Katri",
+          "last_name": "Kulmuni",
+          "full_name": "Katri Kulmuni",
+          "gender": "FEMALE",
+          "nationality": {
+            "code": "FIN",
+            "name": "Finland"
+          },
+          "political_group": {
+            "id": "7035",
+            "label": "Renew",
+            "name": "Renew Europe"
+          },
+          "national_party": {
+            "id": "6725",
+            "label": "KESK",
+            "name": "KESK"
+          }
+        }
+      },
+      {
+        "id": "MTG-PL-2026-06-16-OTH-2017084734447",
+        "speech_id": "2017084734447",
+        "document_id": "CRE-10-2026-06-16-OTH-2017084734447",
+        "agenda_item_id": "CRE-10-2026-06-16-ITM-011",
+        "number": "2-0288-8750",
+        "order": 284,
+        "activity_type": "PLENARY_DEBATE_WRITTEN_STATEMENT",
+        "statement_type": "writtenStatements",
+        "participation_role": "SPEAKER",
+        "start_time": null,
+        "end_time": null,
+        "speaker_person_id": "257070",
+        "speaker_label": "Marcin Sypniewski (ESN), na piśmie.",
+        "speaker_name_in_transcript": "Marcin Sypniewski",
+        "speaker_role_in_transcript": null,
+        "speaker_process_in_transcript": "na piśmie",
+        "on_behalf_of_group": null,
+        "original_languages": [
+          "pl"
+        ],
+        "text_source": "pl",
+        "paragraphs": [
+          {
+            "lang": "pl",
+            "text": "Rozmawiamy dziś o fundamencie bezpieczeństwa naszych państw. Dotychczasowa unijna polityka powrotów była fikcją- urzędniczą niemocą, którą nielegalni imigranci po prostu wyśmiewali. Czas z tym skończyć.Popieramy ten raport, ponieważ wprowadza on rozwiązania, o które od dawna zabiegamy. Koniec z bezkarnością osób, które odmawiają współpracy, ukrywają dokumenty i podają fałszywe tożsamości. Kto łamie prawo i nie współpracuje, musi ponieść tego natychmiastowe konsekwencje – w tym utratę świadczeń socjalnych i rozszerzenie zakazu wjazdu.Kluczowe jest dla nas drastyczne zaostrzenie przepisów wobec osób stanowiących zagrożenie dla bezpieczeństwa. Możliwość przetrzymywania ich w detencji do 24 miesięcy oraz bezterminowe zakazy wjazdu to jedyna skuteczna metoda ochrony naszych obywateli.Nielegalna imigracja musi spotykać się z twardą, natychmiastową deportacją."
+          }
+        ],
+        "text": "Rozmawiamy dziś o fundamencie bezpieczeństwa naszych państw. Dotychczasowa unijna polityka powrotów była fikcją- urzędniczą niemocą, którą nielegalni imigranci po prostu wyśmiewali. Czas z tym skończyć.Popieramy ten raport, ponieważ wprowadza on rozwiązania, o które od dawna zabiegamy. Koniec z bezkarnością osób, które odmawiają współpracy, ukrywają dokumenty i podają fałszywe tożsamości. Kto łamie prawo i nie współpracuje, musi ponieść tego natychmiastowe konsekwencje – w tym utratę świadczeń socjalnych i rozszerzenie zakazu wjazdu.Kluczowe jest dla nas drastyczne zaostrzenie przepisów wobec osób stanowiących zagrożenie dla bezpieczeństwa. Możliwość przetrzymywania ich w detencji do 24 miesięcy oraz bezterminowe zakazy wjazdu to jedyna skuteczna metoda ochrony naszych obywateli.Nielegalna imigracja musi spotykać się z twardą, natychmiastową deportacją.",
+        "speaker": {
+          "person_id": "257070",
+          "in_mep_database": true,
+          "is_mep_on_date": true,
+          "first_name": "Marcin",
+          "last_name": "Sypniewski",
+          "full_name": "Marcin Sypniewski",
+          "gender": "MALE",
+          "nationality": {
+            "code": "POL",
+            "name": "Poland"
+          },
+          "political_group": {
+            "id": "7151",
+            "label": "ESN",
+            "name": "Sovereignists"
+          },
+          "national_party": {
+            "id": "6856",
+            "label": "Konfederacja",
+            "name": "Konfederacja"
+          }
+        }
+      },
+      {
+        "id": "MTG-PL-2026-06-16-OTH-2017084803884",
+        "speech_id": "2017084803884",
+        "document_id": "CRE-10-2026-06-16-OTH-2017084803884",
+        "agenda_item_id": "CRE-10-2026-06-16-ITM-011",
+        "number": "2-0288-9375",
+        "order": 285,
+        "activity_type": "PLENARY_DEBATE_WRITTEN_STATEMENT",
+        "statement_type": "writtenStatements",
+        "participation_role": "SPEAKER",
+        "start_time": null,
+        "end_time": null,
+        "speaker_person_id": "257258",
+        "speaker_label": "Ивайло Вълчев (ECR), в писмена форма.",
+        "speaker_name_in_transcript": "Ивайло Вълчев",
+        "speaker_role_in_transcript": null,
+        "speaker_process_in_transcript": "в писмена форма",
+        "on_behalf_of_group": null,
+        "original_languages": [
+          "bg"
+        ],
+        "text_source": "bg",
+        "paragraphs": [
+          {
+            "lang": "bg",
+            "text": "Уважаеми колеги,Трябва да приемем законодателната резолюция, с която да уредим обща система за връщане на нелегалните имигранти, които пребивават незаконно на територията на Съюза.Това трябваше да се случи много отдавна, но мнозинството в ляво се противопоставяше, въпреки очевидната нужда от мерки срещу нелегалната миграция и репатрирането на нелегалните имигранти. Вместо това те ни предложиха да ги оставим в Европа, да безчинствата, както се случи на коледния базар Кьолн, да застрашават живота на нашите жени и деца.Тази криза с нелегалната миграция доведе до това, че темата стана основна в нашите общества, а те ясно показаха, че искат всеки, който не бяга от война да бъде върнат в родината му. Всеки, който е нарушил нашата граница и е преминал нелегално, да бъде върнат в родината му. Аз съм и ще продължа да бъда застъпник на тази идея, защото Европа има нужда от сигурност и ред. А не от милион нелегални имигранти, които не са лекари и инженери, както ни убеждава левицата, а са хора, които веднага се присъединиха към криминалния контингент. България е държава на първа линия, граница на Европейския съюз. Надявам се този регламент да е стъпката към спирането на нелегалната миграция.Благодаря."
+          }
+        ],
+        "text": "Уважаеми колеги,Трябва да приемем законодателната резолюция, с която да уредим обща система за връщане на нелегалните имигранти, които пребивават незаконно на територията на Съюза.Това трябваше да се случи много отдавна, но мнозинството в ляво се противопоставяше, въпреки очевидната нужда от мерки срещу нелегалната миграция и репатрирането на нелегалните имигранти. Вместо това те ни предложиха да ги оставим в Европа, да безчинствата, както се случи на коледния базар Кьолн, да застрашават живота на нашите жени и деца.Тази криза с нелегалната миграция доведе до това, че темата стана основна в нашите общества, а те ясно показаха, че искат всеки, който не бяга от война да бъде върнат в родината му. Всеки, който е нарушил нашата граница и е преминал нелегално, да бъде върнат в родината му. Аз съм и ще продължа да бъда застъпник на тази идея, защото Европа има нужда от сигурност и ред. А не от милион нелегални имигранти, които не са лекари и инженери, както ни убеждава левицата, а са хора, които веднага се присъединиха към криминалния контингент. България е държава на първа линия, граница на Европейския съюз. Надявам се този регламент да е стъпката към спирането на нелегалната миграция.Благодаря.",
+        "speaker": {
+          "person_id": "257258",
+          "in_mep_database": true,
+          "is_mep_on_date": true,
+          "first_name": "Ivaylo",
+          "last_name": "Valchev",
+          "full_name": "Ivaylo Valchev",
+          "gender": "MALE",
+          "nationality": {
+            "code": "BGR",
+            "name": "Bulgaria"
+          },
+          "political_group": {
+            "id": "7037",
+            "label": "ECR",
+            "name": "European Conservatives and Reformists"
+          },
+          "national_party": {
+            "id": "6931",
+            "label": "ITN",
+            "name": "ITN"
+          }
+        }
+      },
+      {
+        "id": "MTG-PL-2026-06-16-OTH-2017081987285",
+        "speech_id": "2017081987285",
+        "document_id": "CRE-10-2026-06-16-OTH-2017081987285",
+        "agenda_item_id": "CRE-10-2026-06-16-ITM-011",
+        "number": "2-0289-0000",
+        "order": 286,
+        "activity_type": "PROCEEDING_ACTIVITY",
+        "statement_type": "communication",
+        "participation_role": null,
+        "start_time": null,
+        "end_time": null,
+        "speaker_person_id": null,
+        "speaker_label": null,
+        "speaker_name_in_transcript": null,
+        "speaker_role_in_transcript": null,
+        "speaker_process_in_transcript": null,
+        "on_behalf_of_group": null,
+        "original_languages": [
+          "en"
+        ],
+        "text_source": "en",
+        "paragraphs": [
+          {
+            "lang": "en",
+            "text": "(The sitting was suspended at 14:44)"
+          }
+        ],
+        "text": "(The sitting was suspended at 14:44)",
+        "speaker": null
+      }
+    ]
+  }
+}
