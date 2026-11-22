@@ -1,0 +1,21 @@
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Obsidian: settings, layout and caches of each person's app (created when a vault is opened)
+.obsidian/
+.trash/
+
+# OpenCode: local project settings
+.opencode/
+
+# Editors
+.vscode/
+.idea/
+*.swp
