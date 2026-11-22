@@ -284,6 +284,9 @@ This is the main design work. `AGENTS.md` already contains the parts that don't 
    * a question about a blue-card exchange;
    * a question about a topic;
    * a question whose answer is not in the vault.
+
+Ex. How do the PPE and The Left speakers differ on how the EU should respond to Ceuta?
+
 3. **Ask each one like this:**
 
    > Answer only from the notes in vault/, following the query rules in AGENTS.md: <your question>
