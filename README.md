@@ -21,11 +21,12 @@ At each step you make a decision and you check the result. The agent does the ty
 | `debate.json` | the debate: every speech, with its speaker, in the original language |
 | `to_markdown.py` | a script (a small program) that turns `debate.json` into notes |
 | `AGENTS.md` | the rules for the agent; you complete it in step 3 |
-| `codebook.md` | the definitions of the fallacies, for step 8 |
+| `fallacy_detection_codebook.md` | the definitions of the fallacies, for step 8 |
 | `vault/` | your wiki, empty for now. In Obsidian a folder of notes is called a *vault* |
-| `vault_v0/` | a copy of the vault before the agent enriches it, made in step 2 |
 
 ## Background
+
+See this [google doc](https://docs.google.com/document/d/1kyh_6LW9K6OEcO5lZqVCwW1l18DS5xxk5iCHgooDEIk/edit?tab=t.0)
 
 ### European Parliament plenary debates
 
@@ -68,12 +69,7 @@ The data has three levels:
 
 ### Key notions
 
-**Wiki.** A set of pages that link to each other, with one page per subject. Wikipedia is the best known. A wiki works because of a few rules, and your vault uses the same ones:
-
-* each subject has one page, with a stable title;
-* other names lead to that page: on Wikipedia, *UK* and *Britain* both lead to *United Kingdom*. In Obsidian these other names are called *aliases*;
-* subjects that share a name get separate pages: in your vault, `PS (FRA)`, `PS (PRT)` and `PS (SVK)` are three different parties;
-* each page shows which pages link to it. In Obsidian these are the *backlinks*.
+**Wiki.** A set of pages that link to each other, with one page per subject. Wikipedia is the best known. 
 
 **LLM wiki.** A wiki that an LLM writes and maintains from a set of sources, following rules that you write. The idea was described by Andrej Karpathy in April 2026 ([LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)). It has three parts:
 
@@ -85,12 +81,7 @@ A chatbot that searches documents goes back to the raw text for every question. 
 
 **Graph.** A set of points (nodes) connected by lines (edges). In Obsidian each note is a node and each link is an edge.
 
-* A note with many links is a *hub*.
-* A note with no links is an *orphan*.
-* A link to a note that doesn't exist is an *unresolved* link, usually a naming mistake.
-* An edge says that two notes are connected, not how: "member of" and "mentions" look the same. Being close in the graph means being mentioned together, not agreeing.
-
-**Obsidian.** A free note-taking app. It works on plain text files in a folder on your computer: there is no hidden database, and other programs (like OpenCode) can read and write the same files. It shows links, backlinks, the metadata of each note (*properties*) and the graph.
+**Obsidian.** A free note-taking app. It works on plain text files in a folder on your computer: there is no database, and other programs (like OpenCode) can read and write the same files. It shows links, backlinks, the metadata of each note (*properties*) and the graph.
 
 **Markdown.** A way of writing formatted text in a plain text file: `# Title`, `**bold**`, `- list item`. Notes are markdown files (`.md`). A link to another note is written `[[Note name]]`, or `[[Note name|text shown]]`.
 
@@ -112,14 +103,14 @@ language: "de"
 
 1. **Download this repository.** On GitHub, click *Code → Download ZIP*, then unzip it. Put the folder somewhere easy to find, e.g. your Documents.
 2. **Install OpenCode.** Download the desktop app from <https://opencode.ai/download> and install it.
-3. **Connect the model.** Follow your teacher's instructions to connect OpenCode to the model you'll use (in OpenCode, the `/connect` command).
+3. **Connect the model.** Follow your teacher's instructions to connect OpenCode to the model you'll use (in OpenCode, the `/connect` command). Or choose on of the free models that are made available in Opencode.
 4. **Open the folder in OpenCode.** Open the unzipped folder as a project. OpenCode now reads `AGENTS.md` by itself.
 5. **Install Obsidian.** Download it from <https://obsidian.md/download> and install it. You'll open the vault in step 2.
 6. **Check Python.** The script needs Python 3, which is already installed on most computers. In OpenCode, type:
 
    > Check that python3 is installed on this computer, and tell me its version.
 
-   If it isn't installed, ask OpenCode how to install it, or ask your teacher.
+   If it isn't installed, ask OpenCode how to install it.
 
 ### Working with OpenCode
 
