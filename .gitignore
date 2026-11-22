@@ -19,3 +19,6 @@ __pycache__/
 .vscode/
 .idea/
 *.swp
+
+# The vault is built during the workshop, starting from debate.json
+vault/

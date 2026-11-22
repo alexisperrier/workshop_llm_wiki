@@ -2,9 +2,11 @@
 """Convert debate.json into the notes of the Obsidian vault (step 2).
 
 Usage:
-    python3 to_markdown.py               # writes the notes into vault/
-    python3 to_markdown.py --snapshot    # same, then copies vault/ to vault_v0/
+    python3 to_markdown.py               # creates vault/ and writes the notes
     python3 to_markdown.py --overwrite   # rebuild: replaces the notes this script owns
+
+The vault is built in steps: this script creates vault/ and the six folders below (step 2).
+The agent adds entities/, topics/ and index.md (step 4), then fallacies/ (step 8).
 
 Notes written (all from the structured data, no LLM):
     speeches/   one note per intervention (spoken, blue-card question or answer, chair, written statement)
@@ -26,13 +28,11 @@ Standard library only. Python 3.8 or later.
 
 import argparse
 import json
-import shutil
 import sys
 from collections import defaultdict
 from pathlib import Path
 
 CONVERTER_FOLDERS = ["speeches", "debates", "people", "groups", "parties", "countries"]
-OTHER_FOLDERS = ["entities", "topics", "fallacies"]
 
 # Labels that mean "no national party".
 NOT_A_PARTY = {"independent", "independiente", "independente", "indépendant", "ind.", "sans parti", "parteilos"}
@@ -131,7 +131,6 @@ def main():
     parser.add_argument("--vault", default="vault", help="vault folder (default: vault)")
     parser.add_argument("--overwrite", action="store_true",
                         help="replace existing notes in the folders this script writes (loses any enrichment)")
-    parser.add_argument("--snapshot", action="store_true", help="copy the vault to vault_v0/ when done")
     args = parser.parse_args()
 
     source = Path(args.source)
@@ -145,7 +144,7 @@ def main():
     if existing and not args.overwrite:
         sys.exit(f"{len(existing)} notes already exist in {vault}/. "
                  "Run with --overwrite to rebuild them (this replaces any enrichment in those notes).")
-    for folder in CONVERTER_FOLDERS + OTHER_FOLDERS:
+    for folder in CONVERTER_FOLDERS:
         (vault / folder).mkdir(parents=True, exist_ok=True)
     if args.overwrite:
         for p in existing:
@@ -377,13 +376,6 @@ def main():
         kinds[kind_of(iv)] += 1
     print("Interventions: " + ", ".join(f"{n} {k}" for k, n in sorted(kinds.items())) +
           " (procedural lines appear in the debate note only)")
-
-    if args.snapshot:
-        snapshot = vault.parent / "vault_v0"
-        if snapshot.exists():
-            shutil.rmtree(snapshot)
-        shutil.copytree(vault, snapshot)
-        print(f"Snapshot copied to {snapshot}/")
 
 
 if __name__ == "__main__":

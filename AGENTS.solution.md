@@ -12,7 +12,6 @@ Follow these rules exactly. When a case is not covered, stop and ask the user. D
 | `codebook.md` | fallacy codebook, used in step 8 only | read only |
 | `to_markdown.py` | the converter that wrote the step-2 notes | run only when asked |
 | `vault/` | the wiki | read and write |
-| `vault_v0/` | snapshot of the vault after step 2 | never touch |
 
 Vault folders:
 
@@ -34,7 +33,7 @@ Vault folders:
 
 * The text of a speech, in the original language.
 * The step-2 frontmatter fields, and the header line `Speaker: … · Group: … · Party: …`.
-* Anything in `vault_v0/` or in `debate.json`.
+* Anything in `debate.json`.
 * Don't create, rename or delete group or party notes. All of them exist.
 * Don't infer a speaker's group, party or country from the text: the data gives them.
 * Don't write backlinks. Obsidian computes them.

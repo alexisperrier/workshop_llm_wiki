@@ -16,7 +16,6 @@ When a case is not covered by these rules, stop and ask the user. Don't invent a
 | `codebook.md` | fallacy codebook, used in step 8 only | read only |
 | `to_markdown.py` | the converter that wrote the step-2 notes | run only when asked |
 | `vault/` | the wiki | read and write |
-| `vault_v0/` | snapshot of the vault after step 2 | never touch |
 
 Vault folders: `speeches/`, `debates/`, `people/`, `groups/`, `parties/`, `countries/`, `entities/`, `topics/`, `fallacies/`, plus `index.md`.
 
@@ -25,7 +24,7 @@ Vault folders: `speeches/`, `debates/`, `people/`, `groups/`, `parties/`, `count
 ## 2. What you must not change
 
 * The text of a speech, in the original language.
-* Anything in `vault_v0/` or in `debate.json`.
+* Anything in `debate.json`.
 * Don't write backlinks. Obsidian computes them.
 
 > **TODO**: what else must the agent never change or create? Think of the step-2 fields and links, and of the group and party notes. Can the agent deduce a speaker's group from the text?
