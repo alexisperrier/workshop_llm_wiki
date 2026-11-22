@@ -23,7 +23,7 @@ At each step you make a decision and you check the result. The agent does the ty
 | `to_markdown_prompt.txt` | the prompt that produced `to_markdown.py` |
 | `AGENTS.md` | the rules for the agent; you complete it in step 3 |
 | `fallacy_detection_codebook.md` | the definitions of the fallacies, for step 8 |
-| `vault/` | your wiki, empty at the start. `to_markdown.py` fills it in step 2, then the agent enriches it step by step. In Obsidian a folder of notes is called a *vault* |
+| `vault/` | your wiki, created in step 2 by `to_markdown.py`, then enriched step by step. In Obsidian a folder of notes is called a *vault* |
 
 ## Background
 
@@ -106,7 +106,7 @@ language: "de"
 2. **Install OpenCode.** Download the desktop app from <https://opencode.ai/download> and install it.
 3. **Connect the model.** Follow your teacher's instructions to connect OpenCode to the model you'll use (in OpenCode, the `/connect` command). Or choose on of the free models that are made available in Opencode.
 4. **Open the folder in OpenCode.** Open the unzipped folder as a project. OpenCode now reads `AGENTS.md` by itself.
-5. **Install Obsidian and open the vault.** Download Obsidian from <https://obsidian.md/download> and install it. Choose *Open folder as vault* and select the `vault` folder inside this project. It's empty for now: the notes appear in step 2.
+5. **Install Obsidian.** Download it from <https://obsidian.md/download> and install it. You'll open the vault in step 2.
 6. **Check Python.** The script needs Python 3, which is already installed on most computers. In OpenCode, type:
 
    > Check that python3 is installed on this computer, and tell me its version.
@@ -137,16 +137,15 @@ Note : installing python may take some time or face hurdles. If after a few minu
 
 ## Step 2. Turn the data into notes
 
-`to_markdown.py` turns `debate.json` into markdown notes. It was written by an AI agent from the prompt below. Read the prompt: it shows how precise you need to be to get what you want.
+> `to_markdown.py` turns `debate.json` into markdown notes. It was written by an AI agent from the prompt below. Read the prompt: it shows how precise you need to be to get what you want.
+> The prompt that produced `to_markdown.py` is available in the file `to_markdown_prompt.txt`
 
-<details>
-<summary><b>The prompt that produced <code>to_markdown.py</code></b></summary>
-is available in the file `to_markdown_prompt.txt`
-</details>
+1. Start by asking Opencode what the script `to_markdown.py` does ?
 
-1. **Run the script.** In OpenCode, with the **Build** agent, type:
+2. **Run the script.** In OpenCode, with the **Build** agent, type:
 
-   > Run `python3 to_markdown.py` and tell me how many notes were written in each folder.
+   > Run the  `to_markdown.py` script and tell me how many notes were written in each folder.
+   > If python is not installed ask me if I want to install it 
 
    You should get:
 
@@ -159,17 +158,23 @@ is available in the file `to_markdown_prompt.txt`
    | `parties/` | 46 |
    | `countries/` | 17 |
 
-2. **Look at the vault in Obsidian.** The notes appear in the vault you opened during setup. If you haven't opened it yet, choose *Open folder as vault* and select the `vault` folder inside this project. Open the graph view (Cmd+G on Mac, Ctrl+G on Windows) and take a screenshot: you will compare it with the enriched graph in step 6.
+
+> At this point **do not trust that the markdown files were created**. Since the agent, opencode, has read this README file it knows what asnwer it should produce. Never trust, always check.
+
+2. **Open the vault in Obsidian.** Choose *Open folder as vault* and select the `vault` folder inside this project. Open the graph view (Cmd+G on Mac, Ctrl+G on Windows) and take a screenshot: you will compare it with the enriched graph in step 6.
 3. **Check the notes:**
    * Open 3 speech notes and compare them with the source page.
    * Open the note `Konstantinos Arvanitis`: what is in its `aliases`, and why?
    * Open `PS (FRA)`, `PS (PRT)` and `PS (SVK)`: why three notes and not one?
    * Open the debate note: when does the chair change?
 4. **Discuss the script's choices.** The script made decisions for you:
-   * the written statements get notes, even though they were not spoken;
+   * the written statements(*) get notes, even though they were not spoken;
    * the chair's short interventions get notes too.
 
    Would you make the same choices? If not, ask OpenCode to change the script, then run it again with `--overwrite`.
+
+  > (*) Note: the 7 written statements at the end of the debate. These are texts that MEPs submitted in writing instead of speaking. The verbatim report prints them after the debate, under the heading "Déclarations écrites (article 178)" (order 284 in debate.json), with authors such as Rihards Kols and Loucas Fourlas. Nobody said them in the chamber, so nobody heard them and no one could reply with a blue card. The script still gives each one a note in speeches/, like a spoken intervention, named for example 287 Loucas Fourlas (written) and marked kind: "written". That's why there are 81 speech notes and not 74.
+
 
 ## Step 3. Write the rules: AGENTS.md
 
